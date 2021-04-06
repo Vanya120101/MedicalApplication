@@ -264,13 +264,15 @@ namespace MedicalApplication.Views
             this.OtherDataButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.OtherDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OtherDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OtherDataButton.Location = new System.Drawing.Point(80, 372);
+            this.OtherDataButton.Location = new System.Drawing.Point(80, 359);
+            this.OtherDataButton.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.OtherDataButton.Name = "OtherDataButton";
             this.OtherDataButton.Size = new System.Drawing.Size(177, 38);
             this.OtherDataButton.TabIndex = 11;
             this.OtherDataButton.Text = "Другие данные";
             this.OtherDataButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OtherDataButton.UseVisualStyleBackColor = true;
+            this.OtherDataButton.Click += new System.EventHandler(this.OtherDataButton_Click);
             // 
             // AddDoctorForm
             // 

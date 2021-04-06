@@ -69,6 +69,7 @@ namespace MedicalApplication.Views.Controls
             this.PatientInformationButton.TabIndex = 0;
             this.PatientInformationButton.Text = "Информация";
             this.PatientInformationButton.UseVisualStyleBackColor = true;
+            this.PatientInformationButton.Click += new System.EventHandler(this.PatientInformationButton_Click);
             // 
             // AddPatientButton
             // 
@@ -90,6 +91,7 @@ namespace MedicalApplication.Views.Controls
             this.AddPatientButton.TabIndex = 1;
             this.AddPatientButton.Text = "Добавить";
             this.AddPatientButton.UseVisualStyleBackColor = true;
+            this.AddPatientButton.Click += new System.EventHandler(this.AddPatientButton_Click);
             // 
             // RemovePatientButton
             // 

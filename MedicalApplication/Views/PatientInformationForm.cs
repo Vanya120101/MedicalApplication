@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MedicalApplication.Views
 {
-    public partial class AddDoctorForm : Form
+    public partial class PatientInformationForm : Form
     {
-        public AddDoctorForm()
+        public PatientInformationForm()
         {
             InitializeComponent();
         }
@@ -20,11 +20,6 @@ namespace MedicalApplication.Views
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void OtherDataButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

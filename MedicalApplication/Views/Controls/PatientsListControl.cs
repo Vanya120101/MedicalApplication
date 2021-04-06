@@ -21,5 +21,17 @@ namespace MedicalApplication.Views.Controls
         {
             this.BringToFront();
         }
+
+        private void AddPatientButton_Click(object sender, EventArgs e)
+        {
+            AddPatientForm addPatientForm = new AddPatientForm();
+            addPatientForm.Show();
+        }
+
+        private void PatientInformationButton_Click(object sender, EventArgs e)
+        {
+            PatientInformationForm patientInformationForm = new PatientInformationForm();
+            patientInformationForm.Show();
+        }
     }
 }
