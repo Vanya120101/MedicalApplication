@@ -109,6 +109,7 @@ namespace MedicalApplication.Views
             this.StatisticsButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StatisticsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.StatisticsButton.UseVisualStyleBackColor = true;
+            this.StatisticsButton.Click += new System.EventHandler(this.StatisticsButton_Click);
             // 
             // MenuImages
             // 
@@ -288,6 +289,7 @@ namespace MedicalApplication.Views
             this.ButtonMenu.Size = new System.Drawing.Size(150, 81);
             this.ButtonMenu.TabIndex = 0;
             this.ButtonMenu.UseVisualStyleBackColor = true;
+            this.ButtonMenu.Click += new System.EventHandler(this.ButtonMenu_Click);
             // 
             // MedicalForm
             // 
