@@ -47,7 +47,7 @@ namespace MedicalApplication.Views
             this.DoctorSpecialtyBox = new System.Windows.Forms.TextBox();
             this.DoctorExperienceBox = new System.Windows.Forms.TextBox();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddDoctorButton = new System.Windows.Forms.Button();
             this.DoctorBirthdateBox = new System.Windows.Forms.DateTimePicker();
             this.OtherDataButton = new System.Windows.Forms.Button();
             this.TopMenu.SuspendLayout();
@@ -230,21 +230,21 @@ namespace MedicalApplication.Views
             this.CloseButton.Text = "Отмена";
             this.CloseButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // AddDoctorButton
             // 
-            this.button1.AutoSize = true;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(268, 450);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 38);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddDoctorButton.AutoSize = true;
+            this.AddDoctorButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddDoctorButton.FlatAppearance.BorderSize = 0;
+            this.AddDoctorButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.AddDoctorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.AddDoctorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddDoctorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddDoctorButton.Location = new System.Drawing.Point(268, 450);
+            this.AddDoctorButton.Name = "AddDoctorButton";
+            this.AddDoctorButton.Size = new System.Drawing.Size(122, 38);
+            this.AddDoctorButton.TabIndex = 9;
+            this.AddDoctorButton.Text = "Добавить";
+            this.AddDoctorButton.UseVisualStyleBackColor = true;
             // 
             // DoctorBirthdateBox
             // 
@@ -281,7 +281,7 @@ namespace MedicalApplication.Views
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.OtherDataButton);
             this.Controls.Add(this.DoctorBirthdateBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddDoctorButton);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.DoctorFirstNameBox);
             this.Controls.Add(this.DoctorSecondNameBox);
@@ -322,7 +322,7 @@ namespace MedicalApplication.Views
         private System.Windows.Forms.TextBox DoctorSpecialtyBox;
         private System.Windows.Forms.TextBox DoctorExperienceBox;
         private System.Windows.Forms.Button CloseButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddDoctorButton;
         private System.Windows.Forms.DateTimePicker DoctorBirthdateBox;
         private System.Windows.Forms.Button OtherDataButton;
     }

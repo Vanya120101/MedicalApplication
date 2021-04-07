@@ -66,6 +66,12 @@
     <Compile Include="Views\AddPatientForm.Designer.cs">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\AddRecordingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddRecordingForm.Designer.cs">
+      <DependentUpon>AddRecordingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\DoctorsListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     <Compile Include="Views\PatientInformationForm.Designer.cs">
       <DependentUpon>PatientInformationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\RecordingInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RecordingInformationForm.Designer.cs">
+      <DependentUpon>RecordingInformationForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AddPatientForm.resx">
       <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddRecordingForm.resx">
+      <DependentUpon>AddRecordingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Controls\DoctorsListControl.resx">
       <DependentUpon>DoctorsListControl.cs</DependentUpon>
@@ -134,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PatientInformationForm.resx">
       <DependentUpon>PatientInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RecordingInformationForm.resx">
+      <DependentUpon>RecordingInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

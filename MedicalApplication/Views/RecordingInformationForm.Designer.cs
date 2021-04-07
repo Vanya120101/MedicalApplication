@@ -1,7 +1,7 @@
 ﻿
 namespace MedicalApplication.Views
 {
-    partial class PatientInformationForm
+    partial class RecordingInformationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,20 +30,20 @@ namespace MedicalApplication.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientInformationForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecordingInformationForm));
             this.OtherDataButton = new System.Windows.Forms.Button();
-            this.PatientBirthdateBox = new System.Windows.Forms.DateTimePicker();
-            this.ChangePatientInformationButton = new System.Windows.Forms.Button();
+            this.DoctorBirthdateBox = new System.Windows.Forms.DateTimePicker();
+            this.ChangeRecordingInformationButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.PatientFirstNameBox = new System.Windows.Forms.TextBox();
-            this.PatientSecondNameBox = new System.Windows.Forms.TextBox();
+            this.DoctorFullNameBox = new System.Windows.Forms.TextBox();
+            this.DoctorSecondNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.PatientThirdNameBox = new System.Windows.Forms.TextBox();
+            this.DoctorThirdNameBox = new System.Windows.Forms.TextBox();
             this.MenuImages = new System.Windows.Forms.ImageList(this.components);
             this.TopContentPanel = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.PatientSpecialtyBox = new System.Windows.Forms.TextBox();
+            this.DoctorSpecialtyBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TopMenu = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,7 +60,8 @@ namespace MedicalApplication.Views
             this.OtherDataButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.OtherDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OtherDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OtherDataButton.Location = new System.Drawing.Point(80, 307);
+            this.OtherDataButton.Location = new System.Drawing.Point(63, 368);
+            this.OtherDataButton.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.OtherDataButton.Name = "OtherDataButton";
             this.OtherDataButton.Size = new System.Drawing.Size(177, 38);
             this.OtherDataButton.TabIndex = 41;
@@ -68,30 +69,30 @@ namespace MedicalApplication.Views
             this.OtherDataButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OtherDataButton.UseVisualStyleBackColor = true;
             // 
-            // PatientBirthdateBox
+            // DoctorBirthdateBox
             // 
-            this.PatientBirthdateBox.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatientBirthdateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatientBirthdateBox.Location = new System.Drawing.Point(268, 245);
-            this.PatientBirthdateBox.Name = "PatientBirthdateBox";
-            this.PatientBirthdateBox.Size = new System.Drawing.Size(441, 32);
-            this.PatientBirthdateBox.TabIndex = 40;
+            this.DoctorBirthdateBox.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoctorBirthdateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoctorBirthdateBox.Location = new System.Drawing.Point(268, 231);
+            this.DoctorBirthdateBox.Name = "DoctorBirthdateBox";
+            this.DoctorBirthdateBox.Size = new System.Drawing.Size(441, 32);
+            this.DoctorBirthdateBox.TabIndex = 40;
             // 
-            // ChangePatientInformationButton
+            // ChangeRecordingInformationButton
             // 
-            this.ChangePatientInformationButton.AutoSize = true;
-            this.ChangePatientInformationButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChangePatientInformationButton.FlatAppearance.BorderSize = 0;
-            this.ChangePatientInformationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ChangePatientInformationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ChangePatientInformationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ChangePatientInformationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChangePatientInformationButton.Location = new System.Drawing.Point(268, 434);
-            this.ChangePatientInformationButton.Name = "ChangePatientInformationButton";
-            this.ChangePatientInformationButton.Size = new System.Drawing.Size(123, 38);
-            this.ChangePatientInformationButton.TabIndex = 39;
-            this.ChangePatientInformationButton.Text = "Изменить";
-            this.ChangePatientInformationButton.UseVisualStyleBackColor = true;
+            this.ChangeRecordingInformationButton.AutoSize = true;
+            this.ChangeRecordingInformationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChangeRecordingInformationButton.FlatAppearance.BorderSize = 0;
+            this.ChangeRecordingInformationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ChangeRecordingInformationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ChangeRecordingInformationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChangeRecordingInformationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeRecordingInformationButton.Location = new System.Drawing.Point(268, 459);
+            this.ChangeRecordingInformationButton.Name = "ChangeRecordingInformationButton";
+            this.ChangeRecordingInformationButton.Size = new System.Drawing.Size(123, 38);
+            this.ChangeRecordingInformationButton.TabIndex = 39;
+            this.ChangeRecordingInformationButton.Text = "Изменить";
+            this.ChangeRecordingInformationButton.UseVisualStyleBackColor = true;
             // 
             // CloseButton
             // 
@@ -102,47 +103,47 @@ namespace MedicalApplication.Views
             this.CloseButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CloseButton.Location = new System.Drawing.Point(606, 434);
+            this.CloseButton.Location = new System.Drawing.Point(606, 459);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(103, 38);
             this.CloseButton.TabIndex = 38;
             this.CloseButton.Text = "Отмена";
             this.CloseButton.UseVisualStyleBackColor = true;
             // 
-            // PatientFirstNameBox
+            // DoctorFullNameBox
             // 
-            this.PatientFirstNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatientFirstNameBox.Location = new System.Drawing.Point(268, 134);
-            this.PatientFirstNameBox.Name = "PatientFirstNameBox";
-            this.PatientFirstNameBox.Size = new System.Drawing.Size(441, 32);
-            this.PatientFirstNameBox.TabIndex = 29;
+            this.DoctorFullNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoctorFullNameBox.Location = new System.Drawing.Point(268, 159);
+            this.DoctorFullNameBox.Name = "DoctorFullNameBox";
+            this.DoctorFullNameBox.Size = new System.Drawing.Size(441, 32);
+            this.DoctorFullNameBox.TabIndex = 29;
             // 
-            // PatientSecondNameBox
+            // DoctorSecondNameBox
             // 
-            this.PatientSecondNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatientSecondNameBox.Location = new System.Drawing.Point(268, 170);
-            this.PatientSecondNameBox.Name = "PatientSecondNameBox";
-            this.PatientSecondNameBox.Size = new System.Drawing.Size(441, 32);
-            this.PatientSecondNameBox.TabIndex = 30;
+            this.DoctorSecondNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoctorSecondNameBox.Location = new System.Drawing.Point(268, 195);
+            this.DoctorSecondNameBox.Name = "DoctorSecondNameBox";
+            this.DoctorSecondNameBox.Size = new System.Drawing.Size(441, 32);
+            this.DoctorSecondNameBox.TabIndex = 30;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(75, 134);
+            this.label1.Location = new System.Drawing.Point(75, 159);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 26);
+            this.label1.Size = new System.Drawing.Size(152, 26);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Имя";
+            this.label1.Text = "ФИО доктора";
             // 
-            // PatientThirdNameBox
+            // DoctorThirdNameBox
             // 
-            this.PatientThirdNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatientThirdNameBox.Location = new System.Drawing.Point(268, 206);
-            this.PatientThirdNameBox.Name = "PatientThirdNameBox";
-            this.PatientThirdNameBox.Size = new System.Drawing.Size(441, 32);
-            this.PatientThirdNameBox.TabIndex = 33;
+            this.DoctorThirdNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoctorThirdNameBox.Location = new System.Drawing.Point(268, 267);
+            this.DoctorThirdNameBox.Name = "DoctorThirdNameBox";
+            this.DoctorThirdNameBox.Size = new System.Drawing.Size(441, 32);
+            this.DoctorThirdNameBox.TabIndex = 33;
             // 
             // MenuImages
             // 
@@ -165,7 +166,7 @@ namespace MedicalApplication.Views
             this.TopContentPanel.Name = "TopContentPanel";
             this.TopContentPanel.Size = new System.Drawing.Size(725, 100);
             this.TopContentPanel.TabIndex = 5;
-            this.TopContentPanel.Text = "Информация о пациенте";
+            this.TopContentPanel.Text = "Информация о записи на прием";
             this.TopContentPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CancelButton
@@ -192,31 +193,32 @@ namespace MedicalApplication.Views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(75, 170);
+            this.label2.Location = new System.Drawing.Point(75, 195);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 26);
+            this.label2.Size = new System.Drawing.Size(165, 26);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Фамилия";
+            this.label2.Text = "ФИО пациента";
             // 
-            // PatientSpecialtyBox
+            // DoctorSpecialtyBox
             // 
-            this.PatientSpecialtyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatientSpecialtyBox.Location = new System.Drawing.Point(268, 278);
-            this.PatientSpecialtyBox.Name = "PatientSpecialtyBox";
-            this.PatientSpecialtyBox.Size = new System.Drawing.Size(441, 32);
-            this.PatientSpecialtyBox.TabIndex = 36;
+            this.DoctorSpecialtyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoctorSpecialtyBox.Location = new System.Drawing.Point(268, 303);
+            this.DoctorSpecialtyBox.Multiline = true;
+            this.DoctorSpecialtyBox.Name = "DoctorSpecialtyBox";
+            this.DoctorSpecialtyBox.Size = new System.Drawing.Size(441, 103);
+            this.DoctorSpecialtyBox.TabIndex = 36;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(75, 206);
+            this.label3.Location = new System.Drawing.Point(75, 231);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 26);
+            this.label3.Size = new System.Drawing.Size(145, 26);
             this.label3.TabIndex = 34;
-            this.label3.Text = "Отчество";
+            this.label3.Text = "Дата приёма";
             // 
             // TopMenu
             // 
@@ -233,46 +235,46 @@ namespace MedicalApplication.Views
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(75, 242);
+            this.label4.Location = new System.Drawing.Point(75, 267);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 26);
+            this.label4.Size = new System.Drawing.Size(82, 26);
             this.label4.TabIndex = 35;
-            this.label4.Text = "Дата рождения";
+            this.label4.Text = "Статус";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(75, 278);
+            this.label5.Location = new System.Drawing.Point(75, 303);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 26);
+            this.label5.Size = new System.Drawing.Size(100, 26);
             this.label5.TabIndex = 37;
-            this.label5.Text = "Специальность";
+            this.label5.Text = "Причина";
             // 
-            // PatientInformationForm
+            // RecordingInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.OtherDataButton);
-            this.Controls.Add(this.PatientBirthdateBox);
-            this.Controls.Add(this.ChangePatientInformationButton);
+            this.Controls.Add(this.DoctorBirthdateBox);
+            this.Controls.Add(this.ChangeRecordingInformationButton);
             this.Controls.Add(this.CloseButton);
-            this.Controls.Add(this.PatientFirstNameBox);
-            this.Controls.Add(this.PatientSecondNameBox);
+            this.Controls.Add(this.DoctorFullNameBox);
+            this.Controls.Add(this.DoctorSecondNameBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.PatientThirdNameBox);
+            this.Controls.Add(this.DoctorThirdNameBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.PatientSpecialtyBox);
+            this.Controls.Add(this.DoctorSpecialtyBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TopMenu);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PatientInformationForm";
-            this.Text = "PatientInformationForm";
+            this.Name = "RecordingInformationForm";
+            this.Text = "RecordingInformationForm";
             this.TopMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -282,18 +284,18 @@ namespace MedicalApplication.Views
         #endregion
 
         private System.Windows.Forms.Button OtherDataButton;
-        private System.Windows.Forms.DateTimePicker PatientBirthdateBox;
-        private System.Windows.Forms.Button ChangePatientInformationButton;
+        private System.Windows.Forms.DateTimePicker DoctorBirthdateBox;
+        private System.Windows.Forms.Button ChangeRecordingInformationButton;
         private System.Windows.Forms.Button CloseButton;
-        private System.Windows.Forms.TextBox PatientFirstNameBox;
-        private System.Windows.Forms.TextBox PatientSecondNameBox;
+        private System.Windows.Forms.TextBox DoctorFullNameBox;
+        private System.Windows.Forms.TextBox DoctorSecondNameBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox PatientThirdNameBox;
+        private System.Windows.Forms.TextBox DoctorThirdNameBox;
         private System.Windows.Forms.ImageList MenuImages;
         private System.Windows.Forms.Label TopContentPanel;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox PatientSpecialtyBox;
+        private System.Windows.Forms.TextBox DoctorSpecialtyBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel TopMenu;
         private System.Windows.Forms.Label label4;

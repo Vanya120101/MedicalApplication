@@ -33,7 +33,7 @@ namespace MedicalApplication.Views
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoctorInformationForm));
             this.OtherDataButton = new System.Windows.Forms.Button();
             this.DoctorBirthdateBox = new System.Windows.Forms.DateTimePicker();
-            this.ChangeDoctorButton = new System.Windows.Forms.Button();
+            this.ChangeDoctorInformationButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
             this.DoctorFirstNameBox = new System.Windows.Forms.TextBox();
             this.DoctorSecondNameBox = new System.Windows.Forms.TextBox();
@@ -79,21 +79,21 @@ namespace MedicalApplication.Views
             this.DoctorBirthdateBox.Size = new System.Drawing.Size(441, 32);
             this.DoctorBirthdateBox.TabIndex = 26;
             // 
-            // ChangeDoctorButton
+            // ChangeDoctorInformationButton
             // 
-            this.ChangeDoctorButton.AutoSize = true;
-            this.ChangeDoctorButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ChangeDoctorButton.FlatAppearance.BorderSize = 0;
-            this.ChangeDoctorButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ChangeDoctorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ChangeDoctorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ChangeDoctorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ChangeDoctorButton.Location = new System.Drawing.Point(268, 456);
-            this.ChangeDoctorButton.Name = "ChangeDoctorButton";
-            this.ChangeDoctorButton.Size = new System.Drawing.Size(123, 38);
-            this.ChangeDoctorButton.TabIndex = 25;
-            this.ChangeDoctorButton.Text = "Изменить";
-            this.ChangeDoctorButton.UseVisualStyleBackColor = true;
+            this.ChangeDoctorInformationButton.AutoSize = true;
+            this.ChangeDoctorInformationButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChangeDoctorInformationButton.FlatAppearance.BorderSize = 0;
+            this.ChangeDoctorInformationButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ChangeDoctorInformationButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ChangeDoctorInformationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChangeDoctorInformationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ChangeDoctorInformationButton.Location = new System.Drawing.Point(268, 456);
+            this.ChangeDoctorInformationButton.Name = "ChangeDoctorInformationButton";
+            this.ChangeDoctorInformationButton.Size = new System.Drawing.Size(123, 38);
+            this.ChangeDoctorInformationButton.TabIndex = 25;
+            this.ChangeDoctorInformationButton.Text = "Изменить";
+            this.ChangeDoctorInformationButton.UseVisualStyleBackColor = true;
             // 
             // CloseButton
             // 
@@ -279,7 +279,7 @@ namespace MedicalApplication.Views
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.OtherDataButton);
             this.Controls.Add(this.DoctorBirthdateBox);
-            this.Controls.Add(this.ChangeDoctorButton);
+            this.Controls.Add(this.ChangeDoctorInformationButton);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.DoctorFirstNameBox);
             this.Controls.Add(this.DoctorSecondNameBox);
@@ -306,7 +306,7 @@ namespace MedicalApplication.Views
 
         private System.Windows.Forms.Button OtherDataButton;
         private System.Windows.Forms.DateTimePicker DoctorBirthdateBox;
-        private System.Windows.Forms.Button ChangeDoctorButton;
+        private System.Windows.Forms.Button ChangeDoctorInformationButton;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.TextBox DoctorFirstNameBox;
         private System.Windows.Forms.TextBox DoctorSecondNameBox;

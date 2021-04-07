@@ -21,5 +21,17 @@ namespace MedicalApplication.Views.Controls
         {
             this.BringToFront();
         }
+
+        private void AddRecordingButton_Click(object sender, EventArgs e)
+        {
+            AddRecordingForm addRecordingForm = new AddRecordingForm();
+            addRecordingForm.Show();
+        }
+
+        private void RecordingInformationButton_Click(object sender, EventArgs e)
+        {
+            RecordingInformationForm recordingInformationForm = new RecordingInformationForm();
+            recordingInformationForm.Show();
+        }
     }
 }
