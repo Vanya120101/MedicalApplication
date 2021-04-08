@@ -1,7 +1,7 @@
 ﻿
 namespace MedicalApplication.Views
 {
-    partial class AddRecordingForm
+    partial class RecordingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +30,17 @@ namespace MedicalApplication.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRecordingForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecordingForm));
             this.OtherDataButton = new System.Windows.Forms.Button();
-            this.DoctorBirthdateBox = new System.Windows.Forms.DateTimePicker();
-            this.AddRecordingButton = new System.Windows.Forms.Button();
+            this.RecordingDateBox = new System.Windows.Forms.DateTimePicker();
+            this.ControlRecordingButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
             this.DoctorFullNameBox = new System.Windows.Forms.TextBox();
-            this.DoctorSecondNameBox = new System.Windows.Forms.TextBox();
+            this.PatientFullNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.DoctorThirdNameBox = new System.Windows.Forms.TextBox();
+            this.RecordingStatusBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.DoctorSpecialtyBox = new System.Windows.Forms.TextBox();
+            this.RecordingCauseBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TopMenu = new System.Windows.Forms.Panel();
             this.TopContentPanel = new System.Windows.Forms.Label();
@@ -69,30 +69,30 @@ namespace MedicalApplication.Views
             this.OtherDataButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OtherDataButton.UseVisualStyleBackColor = true;
             // 
-            // DoctorBirthdateBox
+            // RecordingDateBox
             // 
-            this.DoctorBirthdateBox.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DoctorBirthdateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DoctorBirthdateBox.Location = new System.Drawing.Point(268, 228);
-            this.DoctorBirthdateBox.Name = "DoctorBirthdateBox";
-            this.DoctorBirthdateBox.Size = new System.Drawing.Size(441, 32);
-            this.DoctorBirthdateBox.TabIndex = 26;
+            this.RecordingDateBox.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RecordingDateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RecordingDateBox.Location = new System.Drawing.Point(268, 228);
+            this.RecordingDateBox.Name = "RecordingDateBox";
+            this.RecordingDateBox.Size = new System.Drawing.Size(441, 32);
+            this.RecordingDateBox.TabIndex = 26;
             // 
-            // AddRecordingButton
+            // ControlRecordingButton
             // 
-            this.AddRecordingButton.AutoSize = true;
-            this.AddRecordingButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddRecordingButton.FlatAppearance.BorderSize = 0;
-            this.AddRecordingButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.AddRecordingButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.AddRecordingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddRecordingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddRecordingButton.Location = new System.Drawing.Point(268, 456);
-            this.AddRecordingButton.Name = "AddRecordingButton";
-            this.AddRecordingButton.Size = new System.Drawing.Size(122, 38);
-            this.AddRecordingButton.TabIndex = 25;
-            this.AddRecordingButton.Text = "Добавить";
-            this.AddRecordingButton.UseVisualStyleBackColor = true;
+            this.ControlRecordingButton.AutoSize = true;
+            this.ControlRecordingButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ControlRecordingButton.FlatAppearance.BorderSize = 0;
+            this.ControlRecordingButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ControlRecordingButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ControlRecordingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ControlRecordingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ControlRecordingButton.Location = new System.Drawing.Point(268, 456);
+            this.ControlRecordingButton.Name = "ControlRecordingButton";
+            this.ControlRecordingButton.Size = new System.Drawing.Size(122, 38);
+            this.ControlRecordingButton.TabIndex = 25;
+            this.ControlRecordingButton.Text = "Действие";
+            this.ControlRecordingButton.UseVisualStyleBackColor = true;
             // 
             // CloseButton
             // 
@@ -118,13 +118,13 @@ namespace MedicalApplication.Views
             this.DoctorFullNameBox.Size = new System.Drawing.Size(441, 32);
             this.DoctorFullNameBox.TabIndex = 13;
             // 
-            // DoctorSecondNameBox
+            // PatientFullNameBox
             // 
-            this.DoctorSecondNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DoctorSecondNameBox.Location = new System.Drawing.Point(268, 192);
-            this.DoctorSecondNameBox.Name = "DoctorSecondNameBox";
-            this.DoctorSecondNameBox.Size = new System.Drawing.Size(441, 32);
-            this.DoctorSecondNameBox.TabIndex = 14;
+            this.PatientFullNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PatientFullNameBox.Location = new System.Drawing.Point(268, 192);
+            this.PatientFullNameBox.Name = "PatientFullNameBox";
+            this.PatientFullNameBox.Size = new System.Drawing.Size(441, 32);
+            this.PatientFullNameBox.TabIndex = 14;
             // 
             // label1
             // 
@@ -137,13 +137,13 @@ namespace MedicalApplication.Views
             this.label1.TabIndex = 15;
             this.label1.Text = "ФИО доктора";
             // 
-            // DoctorThirdNameBox
+            // RecordingStatusBox
             // 
-            this.DoctorThirdNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DoctorThirdNameBox.Location = new System.Drawing.Point(268, 264);
-            this.DoctorThirdNameBox.Name = "DoctorThirdNameBox";
-            this.DoctorThirdNameBox.Size = new System.Drawing.Size(441, 32);
-            this.DoctorThirdNameBox.TabIndex = 17;
+            this.RecordingStatusBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RecordingStatusBox.Location = new System.Drawing.Point(268, 264);
+            this.RecordingStatusBox.Name = "RecordingStatusBox";
+            this.RecordingStatusBox.Size = new System.Drawing.Size(441, 32);
+            this.RecordingStatusBox.TabIndex = 17;
             // 
             // label2
             // 
@@ -156,14 +156,14 @@ namespace MedicalApplication.Views
             this.label2.TabIndex = 16;
             this.label2.Text = "ФИО пациента";
             // 
-            // DoctorSpecialtyBox
+            // RecordingCauseBox
             // 
-            this.DoctorSpecialtyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DoctorSpecialtyBox.Location = new System.Drawing.Point(268, 300);
-            this.DoctorSpecialtyBox.Multiline = true;
-            this.DoctorSpecialtyBox.Name = "DoctorSpecialtyBox";
-            this.DoctorSpecialtyBox.Size = new System.Drawing.Size(441, 103);
-            this.DoctorSpecialtyBox.TabIndex = 20;
+            this.RecordingCauseBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RecordingCauseBox.Location = new System.Drawing.Point(268, 300);
+            this.RecordingCauseBox.Multiline = true;
+            this.RecordingCauseBox.Name = "RecordingCauseBox";
+            this.RecordingCauseBox.Size = new System.Drawing.Size(441, 103);
+            this.RecordingCauseBox.TabIndex = 20;
             // 
             // label3
             // 
@@ -253,27 +253,27 @@ namespace MedicalApplication.Views
             this.label5.TabIndex = 21;
             this.label5.Text = "Причина";
             // 
-            // AddRecordingForm
+            // RecordingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.OtherDataButton);
-            this.Controls.Add(this.DoctorBirthdateBox);
-            this.Controls.Add(this.AddRecordingButton);
+            this.Controls.Add(this.RecordingDateBox);
+            this.Controls.Add(this.ControlRecordingButton);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.DoctorFullNameBox);
-            this.Controls.Add(this.DoctorSecondNameBox);
+            this.Controls.Add(this.PatientFullNameBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DoctorThirdNameBox);
+            this.Controls.Add(this.RecordingStatusBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.DoctorSpecialtyBox);
+            this.Controls.Add(this.RecordingCauseBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TopMenu);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddRecordingForm";
+            this.Name = "RecordingForm";
             this.Text = "AddRecordingForm";
             this.TopMenu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -284,15 +284,15 @@ namespace MedicalApplication.Views
         #endregion
 
         private System.Windows.Forms.Button OtherDataButton;
-        private System.Windows.Forms.DateTimePicker DoctorBirthdateBox;
-        private System.Windows.Forms.Button AddRecordingButton;
+        private System.Windows.Forms.DateTimePicker RecordingDateBox;
+        private System.Windows.Forms.Button ControlRecordingButton;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.TextBox DoctorFullNameBox;
-        private System.Windows.Forms.TextBox DoctorSecondNameBox;
+        private System.Windows.Forms.TextBox PatientFullNameBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox DoctorThirdNameBox;
+        private System.Windows.Forms.TextBox RecordingStatusBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox DoctorSpecialtyBox;
+        private System.Windows.Forms.TextBox RecordingCauseBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel TopMenu;
         private System.Windows.Forms.Label TopContentPanel;

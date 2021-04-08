@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedicalApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,14 +25,14 @@ namespace MedicalApplication.Views.Controls
 
         private void AddRecordingButton_Click(object sender, EventArgs e)
         {
-            AddRecordingForm addRecordingForm = new AddRecordingForm();
-            addRecordingForm.Show();
+            RecordingForm addRecordingForm = new RecordingForm();
+            addRecordingForm.Show(FormMode.IsCreating);
         }
 
         private void RecordingInformationButton_Click(object sender, EventArgs e)
         {
-            RecordingInformationForm recordingInformationForm = new RecordingInformationForm();
-            recordingInformationForm.Show();
+            RecordingForm recordingInformationForm = new RecordingForm();
+            recordingInformationForm.Show(FormMode.IsShowing);
         }
     }
 }

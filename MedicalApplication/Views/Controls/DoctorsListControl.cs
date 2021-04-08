@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedicalApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,14 +33,14 @@ namespace MedicalApplication.Views.Controls
 
         private void AddDoctorButton_Click(object sender, EventArgs e)
         {
-            AddDoctorForm addDoctorForm = new AddDoctorForm();
-            addDoctorForm.Show();
+            DoctorForm addDoctorForm = new DoctorForm();
+            addDoctorForm.Show(FormMode.IsCreating);
         }
 
         private void DoctorInformationButton_Click(object sender, EventArgs e)
         {
-            DoctorInformationForm doctorInformationForm = new DoctorInformationForm();
-            doctorInformationForm.Show();
+            DoctorForm addDoctorForm = new DoctorForm();
+            addDoctorForm.Show(FormMode.IsShowing);
         }
     }
 }
