@@ -16,4 +16,6 @@ namespace MedicalApplication.Models
         IsEditing,
         IsShowing
     }
+
+    
 }

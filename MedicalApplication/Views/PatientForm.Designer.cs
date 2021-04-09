@@ -67,6 +67,7 @@ namespace MedicalApplication.Views
             this.OtherDataButton.Text = "Другие данные";
             this.OtherDataButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OtherDataButton.UseVisualStyleBackColor = true;
+            this.OtherDataButton.Click += new System.EventHandler(this.OtherDataButton_Click);
             // 
             // PatientBirthdateBox
             // 
@@ -92,6 +93,7 @@ namespace MedicalApplication.Views
             this.ControlPatientButton.TabIndex = 25;
             this.ControlPatientButton.Text = "Действие";
             this.ControlPatientButton.UseVisualStyleBackColor = true;
+            this.ControlPatientButton.Click += new System.EventHandler(this.ControlPatientButton_Click);
             // 
             // CloseButton
             // 
@@ -108,6 +110,7 @@ namespace MedicalApplication.Views
             this.CloseButton.TabIndex = 24;
             this.CloseButton.Text = "Отмена";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // PatientFirstNameBox
             // 

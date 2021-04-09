@@ -1,41 +1,21 @@
-﻿using MedicalApplication.Views.Controls;
+﻿using MedicalApplication.Views.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MedicalApplication.Views
 {
-    public partial class MedicalForm : Form
+    public partial class MedicalForm : Form, IMedicalForm
     {
-        DoctorsListControl DoctorsListControl;
-        PatientsListControl PatientsListControl;
-        RecordingsListControl RecordingsListControl;
-        
+
+        #region Constructs
         public MedicalForm()
         {
             InitializeComponent();
-            DoctorsListControl = new DoctorsListControl();
-            this.ContentPanel.Controls.Add(DoctorsListControl);
-            DoctorsListControl.Dock = DockStyle.Fill;
-
-            PatientsListControl = new PatientsListControl();
-            this.ContentPanel.Controls.Add(PatientsListControl);
-            PatientsListControl.Dock = DockStyle.Fill;
-
-            RecordingsListControl = new RecordingsListControl();
-            this.ContentPanel.Controls.Add(RecordingsListControl);
-            RecordingsListControl.Dock = DockStyle.Fill;
-
-            
-
         }
+        #endregion
 
+        #region Events
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -43,37 +23,23 @@ namespace MedicalApplication.Views
 
         private void DoctorsButton_Click(object sender, EventArgs e)
         {
-            DoctorsListControl.Show();
-            SelectedIndicator.Location = DoctorsButton.Location;
-            ClearSelection();
-            DoctorsButton.BackColor = Color.White;
-
-
 
         }
 
         private void PatientsButton_Click(object sender, EventArgs e)
         {
-            PatientsListControl.Show();
-            SelectedIndicator.Location = PatientsButton.Location;
-            ClearSelection();
-
-            PatientsButton.BackColor = Color.White;
-
 
         }
 
         private void RecordingButton_Click(object sender, EventArgs e)
         {
-            RecordingsListControl.Show();
-            SelectedIndicator.Location = RecordingButton.Location;
-            ClearSelection();
-
-            RecordingButton.BackColor = Color.White;
 
         }
 
         bool isOpenedMenu = true;
+
+
+
         private void ButtonMenu_Click(object sender, EventArgs e)
         {
             if (isOpenedMenu)
@@ -109,5 +75,33 @@ namespace MedicalApplication.Views
             RecordingButton.BackColor = Color.FromArgb(250, 250, 250);
             StatisticsButton.BackColor = Color.FromArgb(250, 250, 250);
         }
+
+
+
+        #endregion
+
+        #region Implement IMedicalForm
+        public event Action ClickOnQuestion;
+        public event Action ClickOnDoctors;
+        public event Action ClickOnPatients;
+        public event Action ClickOnRecordings;
+        public event Action ClickOnStatistics;
+
+        public void Clear()
+        {
+
+        }
+
+        public new void Show()
+        {
+            this.Show();
+        }
+
+        public new void Close()
+        {
+            this.Close();
+        }
+
+        #endregion
     }
 }

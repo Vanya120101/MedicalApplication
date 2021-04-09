@@ -61,6 +61,11 @@
     <Compile Include="Views\DoctorForm.Designer.cs">
       <DependentUpon>DoctorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Interfaces\IBaseForm.cs" />
+    <Compile Include="Views\Interfaces\IDoctorForm.cs" />
+    <Compile Include="Views\Interfaces\IMedicalForm.cs" />
+    <Compile Include="Views\Interfaces\IPatientForm.cs" />
+    <Compile Include="Views\Interfaces\IRecordingForm.cs" />
     <Compile Include="Views\PatientForm.cs">
       <SubType>Form</SubType>
     </Compile>

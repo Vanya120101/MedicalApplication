@@ -68,6 +68,7 @@ namespace MedicalApplication.Views
             this.OtherDataButton.Text = "Другие данные";
             this.OtherDataButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.OtherDataButton.UseVisualStyleBackColor = true;
+            this.OtherDataButton.Click += new System.EventHandler(this.OtherDataButton_Click);
             // 
             // RecordingDateBox
             // 
@@ -93,6 +94,7 @@ namespace MedicalApplication.Views
             this.ControlRecordingButton.TabIndex = 25;
             this.ControlRecordingButton.Text = "Действие";
             this.ControlRecordingButton.UseVisualStyleBackColor = true;
+            this.ControlRecordingButton.Click += new System.EventHandler(this.ControlRecordingButton_Click);
             // 
             // CloseButton
             // 
@@ -109,6 +111,7 @@ namespace MedicalApplication.Views
             this.CloseButton.TabIndex = 24;
             this.CloseButton.Text = "Отмена";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // DoctorFullNameBox
             // 

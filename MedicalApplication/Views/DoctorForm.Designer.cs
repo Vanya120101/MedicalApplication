@@ -229,6 +229,7 @@ namespace MedicalApplication.Views
             this.CloseButton.TabIndex = 8;
             this.CloseButton.Text = "Отмена";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // ControlDoctorButton
             // 
@@ -245,6 +246,7 @@ namespace MedicalApplication.Views
             this.ControlDoctorButton.TabIndex = 9;
             this.ControlDoctorButton.Text = "Действие";
             this.ControlDoctorButton.UseVisualStyleBackColor = true;
+            this.ControlDoctorButton.Click += new System.EventHandler(this.ControlDoctorButton_Click);
             // 
             // DoctorBirthdateBox
             // 
@@ -274,7 +276,7 @@ namespace MedicalApplication.Views
             this.OtherDataButton.UseVisualStyleBackColor = true;
             this.OtherDataButton.Click += new System.EventHandler(this.OtherDataButton_Click);
             // 
-            // AddDoctorForm
+            // DoctorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -296,7 +298,7 @@ namespace MedicalApplication.Views
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddDoctorForm";
+            this.Name = "DoctorForm";
             this.Text = "AddDoctorForm";
             this.TopMenu.ResumeLayout(false);
             this.ResumeLayout(false);
