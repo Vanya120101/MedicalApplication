@@ -20,20 +20,49 @@ namespace MedicalApplication.Views
         {
             this.Close();
         }
-
+        private void QuestionButton_Click(object sender, EventArgs e)
+        {
+            if (ClickOnQuestion != null)
+            {
+                ClickOnQuestion.Invoke();
+            }
+        }
         private void DoctorsButton_Click(object sender, EventArgs e)
         {
+            if (ClickOnDoctors != null)
+            {
+                ClickOnDoctors.Invoke();
 
+                SelectedIndicator.Location = DoctorsButton.Location;
+                ClearSelection();
+
+                DoctorsButton.BackColor = Color.White;
+            }
         }
 
         private void PatientsButton_Click(object sender, EventArgs e)
         {
+            if (ClickOnPatients != null)
+            {
+                ClickOnPatients.Invoke();
 
+                SelectedIndicator.Location = PatientsButton.Location;
+                ClearSelection();
+
+                PatientsButton.BackColor = Color.White;
+            }
         }
 
         private void RecordingButton_Click(object sender, EventArgs e)
         {
+            if (ClickOnRecordings != null)
+            {
+                ClickOnRecordings.Invoke();
+                SelectedIndicator.Location = RecordingsButton.Location;
+                ClearSelection();
 
+                RecordingsButton.BackColor = Color.White;
+            }
         }
 
         bool isOpenedMenu = true;
@@ -61,10 +90,14 @@ namespace MedicalApplication.Views
 
         private void StatisticsButton_Click(object sender, EventArgs e)
         {
-            SelectedIndicator.Location = StatisticsButton.Location;
-            ClearSelection();
+            if (ClickOnStatistics != null)
+            {
+                ClickOnStatistics.Invoke();
+                SelectedIndicator.Location = StatisticsButton.Location;
+                ClearSelection();
 
-            StatisticsButton.BackColor = Color.White;
+                StatisticsButton.BackColor = Color.White;
+            }
 
         }
 
@@ -72,7 +105,7 @@ namespace MedicalApplication.Views
         {
             DoctorsButton.BackColor = Color.FromArgb(250, 250, 250);
             PatientsButton.BackColor = Color.FromArgb(250, 250, 250);
-            RecordingButton.BackColor = Color.FromArgb(250, 250, 250);
+            RecordingsButton.BackColor = Color.FromArgb(250, 250, 250);
             StatisticsButton.BackColor = Color.FromArgb(250, 250, 250);
         }
 
@@ -86,6 +119,7 @@ namespace MedicalApplication.Views
         public event Action ClickOnPatients;
         public event Action ClickOnRecordings;
         public event Action ClickOnStatistics;
+        public event Action CloseApplication;
 
         public void Clear()
         {
@@ -99,9 +133,15 @@ namespace MedicalApplication.Views
 
         public new void Close()
         {
-            this.Close();
+            if (CloseApplication != null)
+            {
+                CloseApplication.Invoke();
+            }
+            base.Close();
         }
 
         #endregion
+
+       
     }
 }

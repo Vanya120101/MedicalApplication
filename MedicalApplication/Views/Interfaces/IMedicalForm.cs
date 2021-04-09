@@ -13,6 +13,6 @@ namespace MedicalApplication.Views.Interfaces
         event Action ClickOnPatients;
         event Action ClickOnRecordings;
         event Action ClickOnStatistics;
-
+        event Action CloseApplication;
     }
 }

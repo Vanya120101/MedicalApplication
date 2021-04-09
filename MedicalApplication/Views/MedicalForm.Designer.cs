@@ -36,13 +36,13 @@ namespace MedicalApplication.Views
             this.SelectedIndicator = new System.Windows.Forms.Panel();
             this.StatisticsButton = new System.Windows.Forms.Button();
             this.MenuImages = new System.Windows.Forms.ImageList(this.components);
-            this.RecordingButton = new System.Windows.Forms.Button();
+            this.RecordingsButton = new System.Windows.Forms.Button();
             this.PatientsButton = new System.Windows.Forms.Button();
             this.DoctorsButton = new System.Windows.Forms.Button();
             this.TopMenu = new System.Windows.Forms.Panel();
             this.QuestionButton = new System.Windows.Forms.Button();
             this.MinimizeButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.MyCancelButton = new System.Windows.Forms.Button();
             this.ButtonMenu = new System.Windows.Forms.Button();
             this.LeftMenu.SuspendLayout();
             this.TopMenu.SuspendLayout();
@@ -65,7 +65,7 @@ namespace MedicalApplication.Views
             this.LeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.LeftMenu.Controls.Add(this.SelectedIndicator);
             this.LeftMenu.Controls.Add(this.StatisticsButton);
-            this.LeftMenu.Controls.Add(this.RecordingButton);
+            this.LeftMenu.Controls.Add(this.RecordingsButton);
             this.LeftMenu.Controls.Add(this.PatientsButton);
             this.LeftMenu.Controls.Add(this.DoctorsButton);
             this.LeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -124,31 +124,31 @@ namespace MedicalApplication.Views
             this.MenuImages.Images.SetKeyName(6, "Ilness.png");
             this.MenuImages.Images.SetKeyName(7, "Recording.png");
             // 
-            // RecordingButton
+            // RecordingsButton
             // 
-            this.RecordingButton.AutoSize = true;
-            this.RecordingButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RecordingButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RecordingButton.FlatAppearance.BorderSize = 0;
-            this.RecordingButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.RecordingButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.RecordingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RecordingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RecordingButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.RecordingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RecordingButton.ImageKey = "Recording.png";
-            this.RecordingButton.ImageList = this.MenuImages;
-            this.RecordingButton.Location = new System.Drawing.Point(0, 130);
-            this.RecordingButton.Margin = new System.Windows.Forms.Padding(0);
-            this.RecordingButton.Name = "RecordingButton";
-            this.RecordingButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.RecordingButton.Size = new System.Drawing.Size(300, 65);
-            this.RecordingButton.TabIndex = 2;
-            this.RecordingButton.Text = "Записи";
-            this.RecordingButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RecordingButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.RecordingButton.UseVisualStyleBackColor = true;
-            this.RecordingButton.Click += new System.EventHandler(this.RecordingButton_Click);
+            this.RecordingsButton.AutoSize = true;
+            this.RecordingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RecordingsButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RecordingsButton.FlatAppearance.BorderSize = 0;
+            this.RecordingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.RecordingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.RecordingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RecordingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RecordingsButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RecordingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RecordingsButton.ImageKey = "Recording.png";
+            this.RecordingsButton.ImageList = this.MenuImages;
+            this.RecordingsButton.Location = new System.Drawing.Point(0, 130);
+            this.RecordingsButton.Margin = new System.Windows.Forms.Padding(0);
+            this.RecordingsButton.Name = "RecordingsButton";
+            this.RecordingsButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.RecordingsButton.Size = new System.Drawing.Size(300, 65);
+            this.RecordingsButton.TabIndex = 2;
+            this.RecordingsButton.Text = "Записи";
+            this.RecordingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RecordingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.RecordingsButton.UseVisualStyleBackColor = true;
+            this.RecordingsButton.Click += new System.EventHandler(this.RecordingButton_Click);
             // 
             // PatientsButton
             // 
@@ -206,7 +206,7 @@ namespace MedicalApplication.Views
             this.TopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(193)))), ((int)(((byte)(230)))));
             this.TopMenu.Controls.Add(this.QuestionButton);
             this.TopMenu.Controls.Add(this.MinimizeButton);
-            this.TopMenu.Controls.Add(this.CancelButton);
+            this.TopMenu.Controls.Add(this.MyCancelButton);
             this.TopMenu.Controls.Add(this.ButtonMenu);
             this.TopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopMenu.Location = new System.Drawing.Point(0, 0);
@@ -233,6 +233,7 @@ namespace MedicalApplication.Views
             this.QuestionButton.Size = new System.Drawing.Size(75, 81);
             this.QuestionButton.TabIndex = 5;
             this.QuestionButton.UseVisualStyleBackColor = true;
+            this.QuestionButton.Click += new System.EventHandler(this.QuestionButton_Click);
             // 
             // MinimizeButton
             // 
@@ -252,25 +253,25 @@ namespace MedicalApplication.Views
             this.MinimizeButton.TabIndex = 4;
             this.MinimizeButton.UseVisualStyleBackColor = true;
             // 
-            // CancelButton
+            // MyCancelButton
             // 
-            this.CancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CancelButton.FlatAppearance.BorderSize = 0;
-            this.CancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(193)))), ((int)(((byte)(230)))));
-            this.CancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(193)))), ((int)(((byte)(230)))));
-            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.ImageKey = "Close.png";
-            this.CancelButton.ImageList = this.MenuImages;
-            this.CancelButton.Location = new System.Drawing.Point(725, 0);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 81);
-            this.CancelButton.TabIndex = 3;
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.MyCancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MyCancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MyCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.MyCancelButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MyCancelButton.FlatAppearance.BorderSize = 0;
+            this.MyCancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(193)))), ((int)(((byte)(230)))));
+            this.MyCancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(193)))), ((int)(((byte)(230)))));
+            this.MyCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MyCancelButton.ImageKey = "Close.png";
+            this.MyCancelButton.ImageList = this.MenuImages;
+            this.MyCancelButton.Location = new System.Drawing.Point(725, 0);
+            this.MyCancelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.MyCancelButton.Name = "MyCancelButton";
+            this.MyCancelButton.Size = new System.Drawing.Size(75, 81);
+            this.MyCancelButton.TabIndex = 3;
+            this.MyCancelButton.UseVisualStyleBackColor = true;
+            this.MyCancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // ButtonMenu
             // 
@@ -316,12 +317,12 @@ namespace MedicalApplication.Views
         private System.Windows.Forms.Panel SelectedIndicator;
         private System.Windows.Forms.Button StatisticsButton;
         private System.Windows.Forms.ImageList MenuImages;
-        private System.Windows.Forms.Button RecordingButton;
+        private System.Windows.Forms.Button RecordingsButton;
         private System.Windows.Forms.Button PatientsButton;
         private System.Windows.Forms.Button DoctorsButton;
         private System.Windows.Forms.Panel TopMenu;
         private System.Windows.Forms.Button MinimizeButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button MyCancelButton;
         private System.Windows.Forms.Button ButtonMenu;
         private System.Windows.Forms.Button QuestionButton;
     }

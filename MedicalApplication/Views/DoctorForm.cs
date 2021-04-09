@@ -1,13 +1,7 @@
 ﻿using MedicalApplication.Models;
 using MedicalApplication.Views.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MedicalApplication.Views
@@ -134,10 +128,6 @@ namespace MedicalApplication.Views
 
         #region Events
 
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -177,8 +167,26 @@ namespace MedicalApplication.Views
             }
         }
 
+        private Point moveStart;
+        private void TopMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point deltaPos = new Point(e.X - moveStart.X, e.Y - moveStart.Y);
+                this.Location = new Point(this.Location.X + deltaPos.X, this.Location.Y + deltaPos.Y);
+            }
+        }
+
+        private void TopMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                moveStart = new Point(e.X, e.Y);
+
+            }
+        }
+
         #endregion
 
-        
     }
 }
