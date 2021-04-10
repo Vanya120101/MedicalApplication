@@ -1,4 +1,4 @@
-﻿using MedicalApplication.Models;
+﻿using MedicalApplication.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MedicalApplication.Views.Interfaces
 {
-    interface IPatientForm
+    interface IPatientForm : IBaseForm
     {
         string PatientFirstName { get; set; }
         string PatientSecondName { get; set; }

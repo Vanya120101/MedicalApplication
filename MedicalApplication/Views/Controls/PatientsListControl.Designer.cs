@@ -113,6 +113,7 @@ namespace MedicalApplication.Views.Controls
             this.RemovePatientButton.TabIndex = 2;
             this.RemovePatientButton.Text = "Удалить";
             this.RemovePatientButton.UseVisualStyleBackColor = true;
+            this.RemovePatientButton.Click += new System.EventHandler(this.RemovePatientButton_Click);
             // 
             // BottomPanel
             // 

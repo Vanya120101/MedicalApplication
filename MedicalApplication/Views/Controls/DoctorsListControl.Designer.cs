@@ -69,6 +69,7 @@ namespace MedicalApplication.Views.Controls
             this.RemoveDoctorButton.TabIndex = 2;
             this.RemoveDoctorButton.Text = "Удалить";
             this.RemoveDoctorButton.UseVisualStyleBackColor = true;
+            this.RemoveDoctorButton.Click += new System.EventHandler(this.RemoveDoctorButton_Click);
             // 
             // AddDoctorButton
             // 

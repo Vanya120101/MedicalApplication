@@ -1,4 +1,4 @@
-﻿using MedicalApplication.Models;
+﻿using MedicalApplication.Presenters;
 using MedicalApplication.Views.Interfaces;
 using System;
 using System.Drawing;
@@ -51,6 +51,8 @@ namespace MedicalApplication.Views
         {
             base.ShowDialog();
         }
+
+      
 
         public new void Close()
         {

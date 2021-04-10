@@ -1,4 +1,5 @@
-﻿using MedicalApplication.Models;
+﻿using MedicalApplication.Presenters;
+using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,28 +12,65 @@ using System.Windows.Forms;
 
 namespace MedicalApplication.Views.Controls
 {
-    public partial class PatientsListControl : UserControl
+    public partial class PatientsListControl : UserControl, ITabControl
     {
+        #region Constructs
         public PatientsListControl()
         {
             InitializeComponent();
         }
+        #endregion
+        #region Events
 
-        public new void Show()
-        {
-            this.BringToFront();
-        }
+      
 
         private void AddPatientButton_Click(object sender, EventArgs e)
         {
-            PatientForm addPatientForm = new PatientForm();
-            addPatientForm.Show(FormMode.IsCreating);
+            if (ClickOnAdd != null)
+            {
+                ClickOnAdd.Invoke();
+            }
         }
 
         private void PatientInformationButton_Click(object sender, EventArgs e)
         {
-            PatientForm patientInformationForm = new PatientForm();
-            patientInformationForm.Show(FormMode.IsShowing);
+            if (ClickOnShowInformation != null)
+            {
+                ClickOnShowInformation.Invoke();
+            }
         }
+        private void RemovePatientButton_Click(object sender, EventArgs e)
+        {
+            if (ClickOnRemove != null)
+            {
+                ClickOnRemove.Invoke();
+            }
+        }
+
+        #endregion
+        #region Implement ITabControl
+
+        public event Action ClickOnShowInformation;
+        public event Action ClickOnAdd;
+        public event Action ClickOnRemove;
+
+        public void Clear()
+        {
+        }
+
+        public void Close()
+        {
+        }
+        public new void Show()
+        {
+            this.BringToFront();
+        }
+        public void Show(FormMode mode)
+        {
+            this.Show();
+        }
+        #endregion
+
+
     }
 }

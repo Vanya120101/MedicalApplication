@@ -52,7 +52,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\PresenterService.cs" />
+    <Compile Include="Presenters\DoctorPresenter.cs" />
+    <Compile Include="Presenters\DoctorsTabPresenter.cs" />
+    <Compile Include="Presenters\Helpers\IPresenterBase.cs" />
+    <Compile Include="Presenters\PatientPresenter.cs" />
+    <Compile Include="Presenters\QuestionPresenter.cs" />
+    <Compile Include="Presenters\RecordingPresenter.cs" />
+    <Compile Include="Presenters\RecordingsTabPrsenter.cs" />
+    <Compile Include="Presenters\MedicalPresenter.cs" />
+    <Compile Include="Presenters\Helpers\PresenterBase.cs" />
+    <Compile Include="Presenters\Helpers\PresenterService.cs" />
+    <Compile Include="Presenters\PatientsTabPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\DoctorForm.cs">
@@ -63,6 +73,8 @@
     </Compile>
     <Compile Include="Views\Interfaces\IBaseForm.cs" />
     <Compile Include="Views\Interfaces\IDoctorForm.cs" />
+    <Compile Include="Views\Interfaces\IQuestionForm.cs" />
+    <Compile Include="Views\Interfaces\ITabControl.cs" />
     <Compile Include="Views\Interfaces\IMedicalForm.cs" />
     <Compile Include="Views\Interfaces\IPatientForm.cs" />
     <Compile Include="Views\Interfaces\IRecordingForm.cs" />
@@ -156,7 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain Models\" />
-    <Folder Include="Presenters\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

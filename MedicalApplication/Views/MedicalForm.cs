@@ -1,4 +1,5 @@
-﻿using MedicalApplication.Views.Interfaces;
+﻿using MedicalApplication.Presenters;
+using MedicalApplication.Views.Interfaces;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -130,14 +131,22 @@ namespace MedicalApplication.Views
         {
             this.Show();
         }
-
+        public void Show(FormMode mode)
+        {
+            this.Show();
+        }
         public new void Close()
         {
             if (CloseApplication != null)
             {
                 CloseApplication.Invoke();
             }
-            base.Close();
+        }
+
+        public void AddTab(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            this.ContentPanel.Controls.Add(userControl);
         }
 
         #endregion

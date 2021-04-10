@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MedicalApplication.Views.Interfaces
 {
@@ -14,5 +15,7 @@ namespace MedicalApplication.Views.Interfaces
         event Action ClickOnRecordings;
         event Action ClickOnStatistics;
         event Action CloseApplication;
+
+        void AddTab(UserControl userControl);
     }
 }

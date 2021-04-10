@@ -1,4 +1,5 @@
-﻿using MedicalApplication.Models;
+﻿using MedicalApplication.Presenters;
+using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,36 +12,69 @@ using System.Windows.Forms;
 
 namespace MedicalApplication.Views.Controls
 {
-    public partial class DoctorsListControl : UserControl
+    public partial class DoctorsListControl : UserControl, ITabControl
     {
+        #region Constructs
         public DoctorsListControl()
         {
             InitializeComponent();
-            
+        }
+        #endregion
 
+        #region Events
+       
+
+       
+
+        private void AddDoctorButton_Click(object sender, EventArgs e)
+        {
+            if (ClickOnAdd != null)
+            {
+                ClickOnAdd.Invoke();
+            }
         }
 
-        private void BottomPanel_Paint(object sender, PaintEventArgs e)
+        private void DoctorInformationButton_Click(object sender, EventArgs e)
         {
+            if (ClickOnShowInformation != null)
+            {
+                ClickOnShowInformation.Invoke();
+            }
+        }
+        private void RemoveDoctorButton_Click(object sender, EventArgs e)
+        {
+            if (ClickOnRemove != null)
+            {
+                ClickOnRemove.Invoke();
+            }
+        }
+        #endregion
 
+        #region Implement ITabControl
+
+        public event Action ClickOnShowInformation;
+        public event Action ClickOnAdd;
+        public event Action ClickOnRemove;
+
+        public void Clear()
+        {
+        }
+
+        public void Close()
+        {
         }
 
         public new void Show()
         {
             this.BringToFront();
-           
         }
 
-        private void AddDoctorButton_Click(object sender, EventArgs e)
+        public void Show(FormMode mode)
         {
-            DoctorForm addDoctorForm = new DoctorForm();
-            addDoctorForm.Show(FormMode.IsCreating);
+            this.Show();
         }
 
-        private void DoctorInformationButton_Click(object sender, EventArgs e)
-        {
-            DoctorForm addDoctorForm = new DoctorForm();
-            addDoctorForm.Show(FormMode.IsShowing);
-        }
+        #endregion
+
     }
 }

@@ -74,10 +74,10 @@ namespace MedicalApplication.Views
             this.TopContentPanel.TabIndex = 5;
             this.TopContentPanel.Text = "Добавление доктора";
             this.TopContentPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.TopContentPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopMenu_MouseMove);
+            this.TopContentPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopMenu_MouseDown);
             this.TopContentPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopMenu_MouseMove);
             // 
-            // CancelButton
+            // MyCancelButton
             // 
             this.MyCancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.MyCancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -91,7 +91,7 @@ namespace MedicalApplication.Views
             this.MyCancelButton.ImageList = this.MenuImages;
             this.MyCancelButton.Location = new System.Drawing.Point(725, 0);
             this.MyCancelButton.Margin = new System.Windows.Forms.Padding(2);
-            this.MyCancelButton.Name = "CancelButton";
+            this.MyCancelButton.Name = "MyCancelButton";
             this.MyCancelButton.Size = new System.Drawing.Size(75, 100);
             this.MyCancelButton.TabIndex = 4;
             this.MyCancelButton.UseVisualStyleBackColor = true;
@@ -301,6 +301,7 @@ namespace MedicalApplication.Views
             this.Controls.Add(this.label6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DoctorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddDoctorForm";
             this.TopMenu.ResumeLayout(false);
             this.ResumeLayout(false);

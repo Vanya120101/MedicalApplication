@@ -1,10 +1,11 @@
-﻿using MedicalApplication.Views.Interfaces;
+﻿using MedicalApplication.Presenters;
+using MedicalApplication.Views.Interfaces;
 using System;
 using System.Windows.Forms;
 
 namespace MedicalApplication.Views
 {
-    public partial class QuestionForm : Form, IBaseForm
+    public partial class QuestionForm : Form, IQuestionForm
     {
         public QuestionForm()
         {
@@ -18,6 +19,11 @@ namespace MedicalApplication.Views
         public new void Show()
         {
             base.ShowDialog();
+        }
+
+        public void Show(FormMode mode)
+        {
+            this.Show();
         }
         public new void Close()
         {
