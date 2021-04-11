@@ -1,4 +1,5 @@
-﻿using MedicalApplication.Views.Interfaces;
+﻿using MedicalApplication.Models;
+using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,14 @@ namespace MedicalApplication.Presenters
     abstract class PresenterBase<T> where T:IBaseForm
     {
         protected abstract T Form { get; set; }
+        protected MedicalDbContext MedicalDbContext;
+
         public PresenterBase(IBaseForm form)
         {
             Form = (T)form;
+            MedicalDbContext = new MedicalDbContext();
 
-            Initialize();
+
 
         }
 

@@ -121,7 +121,10 @@ namespace MedicalApplication.Views
         public event Action ClickOnRecordings;
         public event Action ClickOnStatistics;
         public event Action CloseApplication;
-
+        public void ShowErrorMessage(string errorMessage)
+        {
+            MessageBox.Show(errorMessage);
+        }
         public void Clear()
         {
 

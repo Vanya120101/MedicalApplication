@@ -181,13 +181,16 @@ namespace MedicalApplication.Views
         }
 
 
-
+        public void ShowErrorMessage(string errorMessage)
+        {
+            MessageBox.Show(errorMessage);
+        }
 
 
 
 
         #endregion
 
-     
+
     }
 }

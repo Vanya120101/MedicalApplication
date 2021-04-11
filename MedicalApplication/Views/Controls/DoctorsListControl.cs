@@ -1,4 +1,5 @@
-﻿using MedicalApplication.Presenters;
+﻿using MedicalApplication.Domain_Models;
+using MedicalApplication.Presenters;
 using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace MedicalApplication.Views.Controls
 {
-    public partial class DoctorsListControl : UserControl, ITabControl
+    public partial class DoctorsListControl : UserControl, ITabControl<Doctor>
     {
         #region Constructs
         public DoctorsListControl()
@@ -55,6 +56,7 @@ namespace MedicalApplication.Views.Controls
         public event Action ClickOnShowInformation;
         public event Action ClickOnAdd;
         public event Action ClickOnRemove;
+        public BindingList<Doctor> Table { get => this.DoctorsList.DataSource as BindingList<Doctor>; set => this.DoctorsList.DataSource=value; }
 
         public void Clear()
         {
@@ -72,6 +74,11 @@ namespace MedicalApplication.Views.Controls
         public void Show(FormMode mode)
         {
             this.Show();
+        }
+
+        public void ShowErrorMessage(string errorMessage)
+        {
+            MessageBox.Show(errorMessage);
         }
 
         #endregion

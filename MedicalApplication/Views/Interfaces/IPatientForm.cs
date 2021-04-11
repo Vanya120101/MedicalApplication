@@ -20,7 +20,6 @@ namespace MedicalApplication.Views.Interfaces
         event Action ClickOnChangePatient;
         event Action ClickOnOtherDate;
 
-        void Show(FormMode mode);
 
     }
 }

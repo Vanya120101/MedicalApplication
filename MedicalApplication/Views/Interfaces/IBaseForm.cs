@@ -14,6 +14,7 @@ namespace MedicalApplication.Views.Interfaces
         void Clear();
 
         void Show(FormMode mode);
+        void ShowErrorMessage(string errorMessage);
 
     }
 }

@@ -12,6 +12,7 @@ namespace MedicalApplication.Presenters
         protected override IPatientForm Form { get; set; }
         public PatientPresenter(IBaseForm form) : base(form)
         {
+            Initialize();
 
         }
         protected override void Initialize()

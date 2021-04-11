@@ -14,6 +14,7 @@ namespace MedicalApplication.Presenters
 
         public QuestionPresenter(IBaseForm form) : base(form)
         {
+            Initialize();
 
         }
 

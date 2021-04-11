@@ -186,7 +186,10 @@ namespace MedicalApplication.Views
             RecordingStatusBox.Clear();
             RecordingCauseBox.Clear();
         }
-
+        public void ShowErrorMessage(string errorMessage)
+        {
+            MessageBox.Show(errorMessage);
+        }
         #endregion
     }
 }

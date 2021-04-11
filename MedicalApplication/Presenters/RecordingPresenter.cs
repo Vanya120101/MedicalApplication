@@ -13,6 +13,7 @@ namespace MedicalApplication.Presenters
 
         public RecordingPresenter(IBaseForm form) : base(form)
         {
+            Initialize();
 
         }
         protected override void Initialize()

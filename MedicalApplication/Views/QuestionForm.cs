@@ -40,5 +40,10 @@ namespace MedicalApplication.Views
             this.Close();
 
         }
+
+        public void ShowErrorMessage(string errorMessage)
+        {
+            MessageBox.Show(errorMessage);
+        }
     }
 }

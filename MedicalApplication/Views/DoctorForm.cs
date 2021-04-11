@@ -30,7 +30,10 @@ namespace MedicalApplication.Views
         public string DoctorSpeciality { get => this.DoctorSpecialtyBox.Text; set => this.DoctorSpecialtyBox.Text = value; }
         public string DoctorExperience { get => this.DoctorExperienceBox.Text; set => this.DoctorExperienceBox.Text = value; }
 
-
+        public void ShowErrorMessage(string errorMessage)
+        {
+            MessageBox.Show(errorMessage);
+        }
         public void Show(FormMode mode)
         {
             this.FormMode = mode;

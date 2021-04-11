@@ -16,6 +16,8 @@ namespace MedicalApplication.Presenters
         public MedicalPresenter(IBaseForm form) : base(form)
         {
             PresenterService.AddPresenter(Presenters.Medical, this);
+            Initialize();
+
         }
 
         protected override void Initialize()
@@ -40,15 +42,10 @@ namespace MedicalApplication.Presenters
 
         public void Start()
         {
-
-
-
-
             Form.AddTab(PresenterService.GetPresenter(Presenters.DoctorsTab).GetForm() as UserControl);
             Form.AddTab(PresenterService.GetPresenter(Presenters.PatientsTab).GetForm() as UserControl);
             Form.AddTab(PresenterService.GetPresenter(Presenters.RecordingsTab).GetForm() as UserControl);
             //Form.AddTab(PresenterService.GetPresenter(Presenters.StatisticsTab).GetForm() as UserControl);
-
             Application.Run(Form as Form);
         }
 
@@ -60,25 +57,21 @@ namespace MedicalApplication.Presenters
         private void MedicalForm_ClickOnStatistics()
         {
             //PresenterService.Show(Presenters.StatisticsTab);
-
         }
 
         private void MedicalForm_ClickOnRecordings()
         {
             PresenterService.Show(Presenters.RecordingsTab);
-
         }
 
         private void MedicalForm_ClickOnPatients()
         {
             PresenterService.Show(Presenters.PatientsTab);
-
         }
 
         private void MedicalForm_ClickOnDoctors()
         {
             PresenterService.Show(Presenters.DoctorsTab);
-
         }
 
 

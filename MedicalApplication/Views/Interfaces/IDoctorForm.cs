@@ -21,7 +21,6 @@ namespace MedicalApplication.Views.Interfaces
         event Action ClickOnChangeDoctor;
         event Action ClickOnOtherDate;
 
-        void Show(FormMode mode);
 
 
 
