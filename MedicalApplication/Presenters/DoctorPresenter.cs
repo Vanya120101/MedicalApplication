@@ -1,4 +1,5 @@
-﻿using MedicalApplication.Views.Interfaces;
+﻿using MedicalApplication.Domain_Models;
+using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,8 +36,26 @@ namespace MedicalApplication.Presenters
                 return;
             }
             PresenterService.Close(Presenters.DoctorForm);
+
         }
 
+      
+        public override void Show<T>(FormMode formMode, T currentObject)
+        {
+            Doctor doctor = currentObject as Doctor;
+            if (doctor == null)
+            {
+                return;
+            }
+
+            Form.DoctorFirstName = doctor.FirstDoctorName;
+            Form.DoctorSecondName = doctor.SecondDoctorName;
+            Form.DoctorThirdName = doctor.ThirdDoctorName;
+            Form.DoctorBirthdate = doctor.DoctorBirthdate;
+            Form.DoctorSpeciality = doctor.DoctorSpeciality;
+            Form.DoctorExperience = doctor.DoctorExperience;
+            this.Show(formMode);
+        }
         private void Form_ClickOnSaveDoctorChanged()
         {
 

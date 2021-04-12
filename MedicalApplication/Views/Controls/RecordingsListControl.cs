@@ -59,6 +59,60 @@ namespace MedicalApplication.Views.Controls
 
         public BindingList<Recording> Table { get => this.RecordingsList.DataSource as BindingList<Recording>; set => this.RecordingsList.DataSource = value; }
 
+        public Recording CurrentObject
+        {
+            get
+            {
+                if (this.RecordingsList.CurrentRow != null)
+                {
+                    return this.RecordingsList.CurrentRow.DataBoundItem as Recording;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                int id = value.Id;
+                int index = -1;
+
+                foreach (DataGridViewRow row in this.RecordingsList.Rows)
+                {
+                    Recording doctor = row.DataBoundItem as Recording;
+                    if (doctor.Id == id)
+                    {
+                        index = row.Index;
+                        break;
+                    }
+                }
+
+                this.RecordingsList[0, index].Selected = true;
+            }
+        }
+
+        public int CurrentSelectedIndex
+        {
+            get
+            {
+                if (this.RecordingsList.CurrentRow != null)
+                {
+                    return this.RecordingsList.CurrentRow.Index;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set
+            {
+                if (value >= 0 && value < RecordingsList.RowCount)
+                {
+                    this.RecordingsList[0, value].Selected = true;
+                }
+            }
+        }
+
         public void Clear()
         {
         }

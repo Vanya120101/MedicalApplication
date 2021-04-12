@@ -70,7 +70,10 @@ namespace MedicalApplication.Views.Controls
             this.DoctorsList.EnableHeadersVisualStyles = false;
             this.DoctorsList.Location = new System.Drawing.Point(0, 0);
             this.DoctorsList.Margin = new System.Windows.Forms.Padding(0);
+            this.DoctorsList.MultiSelect = false;
             this.DoctorsList.Name = "DoctorsList";
+            this.DoctorsList.ReadOnly = true;
+            this.DoctorsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DoctorsList.Size = new System.Drawing.Size(1300, 400);
             this.DoctorsList.TabIndex = 0;
             // 

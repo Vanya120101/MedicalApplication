@@ -23,9 +23,9 @@ namespace MedicalApplication.Views.Controls
         #endregion
 
         #region Events
-       
 
-       
+
+
 
         private void AddDoctorButton_Click(object sender, EventArgs e)
         {
@@ -56,7 +56,60 @@ namespace MedicalApplication.Views.Controls
         public event Action ClickOnShowInformation;
         public event Action ClickOnAdd;
         public event Action ClickOnRemove;
-        public BindingList<Doctor> Table { get => this.DoctorsList.DataSource as BindingList<Doctor>; set => this.DoctorsList.DataSource=value; }
+        public BindingList<Doctor> Table { get => this.DoctorsList.DataSource as BindingList<Doctor>; set => this.DoctorsList.DataSource = value; }
+        public Doctor CurrentObject
+        {
+            get
+            {
+                if (this.DoctorsList.CurrentRow != null)
+                {
+                    return this.DoctorsList.CurrentRow.DataBoundItem as Doctor;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                int id = value.Id;
+                int index = 0;
+
+                foreach (DataGridViewRow row in this.DoctorsList.Rows)
+                {
+                    Doctor doctor = row.DataBoundItem as Doctor;
+                    if (doctor.Id == id)
+                    {
+                        index = row.Index;
+                        break;
+                    }
+                }
+
+                this.DoctorsList[0, index].Selected = true;
+            }
+        }
+
+        public int CurrentSelectedIndex
+        {
+            get
+            {
+                if (this.DoctorsList.CurrentRow != null)
+                {
+                    return this.DoctorsList.CurrentRow.Index;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set
+            {
+                if (value >= 0 && value < DoctorsList.RowCount)
+                {
+                    this.DoctorsList[0, value].Selected = true;
+                }
+            }
+        }
 
         public void Clear()
         {

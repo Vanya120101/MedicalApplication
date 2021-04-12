@@ -17,9 +17,6 @@ namespace MedicalApplication.Presenters
         {
             Form = (T)form;
             MedicalDbContext = new MedicalDbContext();
-
-
-
         }
 
         protected abstract void Initialize();
@@ -31,6 +28,10 @@ namespace MedicalApplication.Presenters
         public void Show(FormMode formMode)
         {
             Form.Show(formMode);
+        }
+        public virtual void Show<T>(FormMode formMode, T currentObject)
+        {
+
         }
         public void Close()
         {

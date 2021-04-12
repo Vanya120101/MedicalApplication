@@ -12,6 +12,8 @@ namespace MedicalApplication.Presenters
         void Show();
 
         void Show(FormMode formMode);
+        void Show<T>(FormMode formMode, T currentObject);
+
         void Close();
 
         IBaseForm GetForm();

@@ -19,7 +19,7 @@ namespace MedicalApplication.Models
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Recording> Recordings { get; set; }
 
-        public static event Action Update;
+        public static event Action UpdateDoctors;
 
         public string CheckAndAddDoctor(string firstDoctorName, string secondDoctorName, string thirdDoctorName, string doctorSpeciality, DateTime doctorBirthdate, string doctorExperience)
         {
@@ -52,9 +52,25 @@ namespace MedicalApplication.Models
 
             this.Doctors.Add(doctor);
             this.SaveChanges();
-            if (Update != null)
+            if (UpdateDoctors != null)
             {
-                Update.Invoke();
+                UpdateDoctors.Invoke();
+            }
+            return null;
+        }
+
+        public string CheckAndRemoveDoctor(Doctor doctor)
+        {
+            if (doctor == null)
+            {
+                return "Доктор не выбран";
+            }
+            this.Doctors.Remove(doctor);
+            this.SaveChanges();
+
+            if (UpdateDoctors != null)
+            {
+                UpdateDoctors.Invoke();
             }
             return null;
         }

@@ -14,5 +14,9 @@ namespace MedicalApplication.Views.Interfaces
         event Action ClickOnRemove;
 
         BindingList<T> Table { get; set; }
+
+        T CurrentObject { get; set; }
+
+        int CurrentSelectedIndex { get; set; }
     }
 }

@@ -56,6 +56,62 @@ namespace MedicalApplication.Views.Controls
         public event Action ClickOnRemove;
         public BindingList<Patient> Table { get => this.PatientsList.DataSource as BindingList<Patient>; set => this.PatientsList.DataSource = value; }
 
+        public Patient CurrentObject
+        {
+            get
+            {
+                if (this.PatientsList.CurrentRow != null)
+                {
+                    return this.PatientsList.CurrentRow.DataBoundItem as Patient;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                int id = value.Id;
+                int index = -1;
+
+                foreach (DataGridViewRow row in this.PatientsList.Rows)
+                {
+                    Patient doctor = row.DataBoundItem as Patient;
+                    if (doctor.Id == id)
+                    {
+                        index = row.Index;
+                        break;
+                    }
+                }
+
+                this.PatientsList[0, index].Selected = true;
+            }
+        }
+
+        public int CurrentSelectedIndex
+        {
+            get
+            {
+                if (this.PatientsList.CurrentRow != null)
+                {
+                    return this.PatientsList.CurrentRow.Index;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+            set
+            {
+                if (value >= 0 && value < PatientsList.RowCount)
+                {
+                    this.PatientsList[0, value].Selected = true;
+                }
+            }
+        }
+
+
         public void Clear()
         {
         }

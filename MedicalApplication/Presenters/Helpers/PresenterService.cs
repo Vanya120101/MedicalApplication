@@ -30,6 +30,11 @@ namespace MedicalApplication.Presenters
         {
             Presenters[presenter].Show(formMode);
         }
+        public static void Show<T>(Presenters presenter, FormMode formMode, T currentObject)
+        {
+            Presenters[presenter].Show<T>(formMode, currentObject);
+        }
+
         public static void Close(Presenters presenter)
         {
             Presenters[presenter].Close();
