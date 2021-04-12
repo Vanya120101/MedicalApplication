@@ -168,6 +168,7 @@ namespace MedicalApplication.Views
 
         public new void Close()
         {
+            this.Clear();
             this.Visible = false;
         }
 

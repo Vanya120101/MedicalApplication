@@ -20,6 +20,8 @@ namespace MedicalApplication.Models
         public DbSet<Recording> Recordings { get; set; }
 
         public static event Action UpdateDoctors;
+        public static event Action UpdatePatients;
+        public static event Action UpdateRecordings;
 
         public string CheckAndAddDoctor(string firstDoctorName, string secondDoctorName, string thirdDoctorName, string doctorSpeciality, DateTime doctorBirthdate, string doctorExperience)
         {
@@ -71,6 +73,105 @@ namespace MedicalApplication.Models
             if (UpdateDoctors != null)
             {
                 UpdateDoctors.Invoke();
+            }
+            return null;
+        }
+
+        public string CheckAndAddPatient(string firstPatientName, string secondPatientName, string thirdPatientName, string patientSpeciality, DateTime patientBirthdate)
+        {
+
+            if (string.IsNullOrEmpty(firstPatientName))
+            {
+                return "Имя пациента не должно быть пустым";
+            }
+            if (string.IsNullOrEmpty(secondPatientName))
+            {
+                return "Фамилия пациента не должно быть пустой";
+            }
+            if (string.IsNullOrEmpty(thirdPatientName))
+            {
+                return "Отчество пациента не должно быть пустым";
+            }
+            if (string.IsNullOrEmpty(patientSpeciality))
+            {
+                return "Специальность пациента не должна быть пустой";
+            }
+            if (patientBirthdate > DateTime.Now || patientBirthdate < new DateTime(1900, 01, 01))
+            {
+                return "Дата рождения пациента должна быть меньше сегодняшей и больше, чем 1900 года";
+            }
+
+            Patient patient = new Patient(firstPatientName, secondPatientName, thirdPatientName, patientSpeciality, patientBirthdate);
+
+            this.Patients.Add(patient);
+            this.SaveChanges();
+            if (UpdatePatients != null)
+            {
+                UpdatePatients.Invoke();
+            }
+            return null;
+        }
+        public string CheckAndRemovePatient(Patient patient)
+        {
+            if (patient == null)
+            {
+                return "Пациент не выбран";
+            }
+
+            this.Patients.Remove(patient);
+            this.SaveChanges();
+
+            if (UpdatePatients != null)
+            {
+                UpdatePatients.Invoke();
+            }
+            return null;
+        }
+
+        public string CheckAndAddRecording(Doctor doctor, Patient patient, DateTime meetingTime, string recordingStatus, string recordingCause)
+        {
+            if (doctor == null)
+            {
+                return "Доктор не должен быть пустым";
+            }
+            if (patient == null)
+            {
+                return "Пациент не должен быть пустым";
+            }
+            if (meetingTime < new DateTime(1900, 01, 01))
+            {
+                return "Дата приема не должна быть столь далека";
+            }
+            if (string.IsNullOrEmpty(recordingCause))
+            {
+                return "Причина приема не должна быть пустой";
+            }
+            if (string.IsNullOrEmpty(recordingStatus))
+            {
+                return "Статус приёма не должен быть пустым";
+            }
+
+            Recording recording = new Recording(doctor, patient, meetingTime, recordingStatus, recordingCause);
+            this.Recordings.Add(recording);
+            this.SaveChanges();
+            if (UpdateRecordings != null)
+            {
+                UpdateRecordings.Invoke();
+            }
+
+            return null;
+        }
+        public string CheckAndRemoveRecording(Recording recording)
+        {
+            if (recording == null)
+            {
+                return "Приём не выбран";
+            }
+            this.Recordings.Remove(recording);
+
+            if (UpdateRecordings != null)
+            {
+                UpdateRecordings.Invoke();
             }
             return null;
         }
