@@ -35,8 +35,6 @@ namespace MedicalApplication.Views
             this.RecordingDateBox = new System.Windows.Forms.DateTimePicker();
             this.ControlRecordingButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
-            this.DoctorFullNameBox = new System.Windows.Forms.TextBox();
-            this.PatientFullNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.RecordingStatusBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +46,8 @@ namespace MedicalApplication.Views
             this.MenuImages = new System.Windows.Forms.ImageList(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.DoctorBox = new System.Windows.Forms.ComboBox();
+            this.PatientBox = new System.Windows.Forms.ComboBox();
             this.TopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,22 +112,6 @@ namespace MedicalApplication.Views
             this.CloseButton.Text = "Отмена";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // DoctorFullNameBox
-            // 
-            this.DoctorFullNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DoctorFullNameBox.Location = new System.Drawing.Point(268, 156);
-            this.DoctorFullNameBox.Name = "DoctorFullNameBox";
-            this.DoctorFullNameBox.Size = new System.Drawing.Size(441, 32);
-            this.DoctorFullNameBox.TabIndex = 13;
-            // 
-            // PatientFullNameBox
-            // 
-            this.PatientFullNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatientFullNameBox.Location = new System.Drawing.Point(268, 192);
-            this.PatientFullNameBox.Name = "PatientFullNameBox";
-            this.PatientFullNameBox.Size = new System.Drawing.Size(441, 32);
-            this.PatientFullNameBox.TabIndex = 14;
             // 
             // label1
             // 
@@ -258,17 +242,35 @@ namespace MedicalApplication.Views
             this.label5.TabIndex = 21;
             this.label5.Text = "Причина";
             // 
+            // DoctorBox
+            // 
+            this.DoctorBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoctorBox.FormattingEnabled = true;
+            this.DoctorBox.Location = new System.Drawing.Point(268, 156);
+            this.DoctorBox.Name = "DoctorBox";
+            this.DoctorBox.Size = new System.Drawing.Size(441, 33);
+            this.DoctorBox.TabIndex = 28;
+            // 
+            // PatientBox
+            // 
+            this.PatientBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PatientBox.FormattingEnabled = true;
+            this.PatientBox.Location = new System.Drawing.Point(268, 192);
+            this.PatientBox.Name = "PatientBox";
+            this.PatientBox.Size = new System.Drawing.Size(441, 33);
+            this.PatientBox.TabIndex = 29;
+            // 
             // RecordingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.PatientBox);
+            this.Controls.Add(this.DoctorBox);
             this.Controls.Add(this.OtherDataButton);
             this.Controls.Add(this.RecordingDateBox);
             this.Controls.Add(this.ControlRecordingButton);
             this.Controls.Add(this.CloseButton);
-            this.Controls.Add(this.DoctorFullNameBox);
-            this.Controls.Add(this.PatientFullNameBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RecordingStatusBox);
             this.Controls.Add(this.label2);
@@ -293,8 +295,6 @@ namespace MedicalApplication.Views
         private System.Windows.Forms.DateTimePicker RecordingDateBox;
         private System.Windows.Forms.Button ControlRecordingButton;
         private System.Windows.Forms.Button CloseButton;
-        private System.Windows.Forms.TextBox DoctorFullNameBox;
-        private System.Windows.Forms.TextBox PatientFullNameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox RecordingStatusBox;
         private System.Windows.Forms.Label label2;
@@ -306,5 +306,7 @@ namespace MedicalApplication.Views
         private System.Windows.Forms.ImageList MenuImages;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox DoctorBox;
+        private System.Windows.Forms.ComboBox PatientBox;
     }
 }

@@ -11,6 +11,7 @@ namespace MedicalApplication.Presenters
     class DoctorPresenter : PresenterBase<IDoctorForm>, IPresenterBase
     {
         protected override IDoctorForm Form { get; set; }
+        Doctor CurrentDoctor { get; set; }
         public DoctorPresenter(IBaseForm form) : base(form)
         {
             Initialize();
@@ -20,7 +21,6 @@ namespace MedicalApplication.Presenters
         protected override void Initialize()
         {
             Form.ClickOnChangeDoctor += Form_ClickOnChangeDoctor;
-            //  Form.ClickOnCreateDoctor += Form_ClickOnCreateDoctor;
             Form.ClickOnCreateDoctor += () => { Form_ClickOnCreateDoctor(Form.DoctorFirstName, Form.DoctorSecondName, Form.DoctorThirdName, Form.DoctorBirthdate, Form.DoctorSpeciality, Form.DoctorExperience); };
 
             Form.ClickOnOtherDate += Form_ClickOnOtherDate;
@@ -39,38 +39,56 @@ namespace MedicalApplication.Presenters
 
         }
 
-      
+
         public override void Show<T>(FormMode formMode, T currentObject)
         {
-            Doctor doctor = currentObject as Doctor;
-            if (doctor == null)
+            CurrentDoctor = currentObject as Doctor;
+            if (CurrentDoctor == null)
             {
                 return;
             }
 
-            Form.DoctorFirstName = doctor.FirstDoctorName;
-            Form.DoctorSecondName = doctor.SecondDoctorName;
-            Form.DoctorThirdName = doctor.ThirdDoctorName;
-            Form.DoctorBirthdate = doctor.DoctorBirthdate;
-            Form.DoctorSpeciality = doctor.DoctorSpeciality;
-            Form.DoctorExperience = doctor.DoctorExperience;
+            Form.DoctorFirstName = CurrentDoctor.FirstDoctorName;
+            Form.DoctorSecondName = CurrentDoctor.SecondDoctorName;
+            Form.DoctorThirdName = CurrentDoctor.ThirdDoctorName;
+            Form.DoctorBirthdate = CurrentDoctor.DoctorBirthdate;
+            Form.DoctorSpeciality = CurrentDoctor.DoctorSpeciality;
+            Form.DoctorExperience = CurrentDoctor.DoctorExperience;
             this.Show(formMode);
         }
         private void Form_ClickOnSaveDoctorChanged()
         {
+            if (CurrentDoctor == null)
+            {
+                Form.ShowErrorMessage("Что-то пошло не так");
+                return;
+            }
 
+            CurrentDoctor.FirstDoctorName = Form.DoctorFirstName;
+            CurrentDoctor.SecondDoctorName = Form.DoctorSecondName;
+            CurrentDoctor.ThirdDoctorName = Form.DoctorThirdName;
+            CurrentDoctor.DoctorBirthdate = Form.DoctorBirthdate;
+            CurrentDoctor.DoctorSpeciality = Form.DoctorSpeciality;
+            CurrentDoctor.DoctorExperience = Form.DoctorExperience;
+            string errorMessage = MedicalDbContext.CheckAndChangeDoctor(CurrentDoctor);
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                Form.ShowErrorMessage(errorMessage);
+                return;
+            }
+            PresenterService.Close(Presenters.DoctorForm);
         }
 
         private void Form_ClickOnOtherDate()
         {
         }
 
- 
+
 
         private void Form_ClickOnChangeDoctor()
         {
         }
 
-      
+
     }
 }

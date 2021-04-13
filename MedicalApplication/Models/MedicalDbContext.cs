@@ -76,6 +76,41 @@ namespace MedicalApplication.Models
             }
             return null;
         }
+        public string CheckAndChangeDoctor(Doctor doctor)
+        {
+            if (string.IsNullOrEmpty(doctor.FirstDoctorName))
+            {
+                return "Имя доктора не должно быть пустым";
+            }
+            if (string.IsNullOrEmpty(doctor.SecondDoctorName))
+            {
+                return "Фамилия доктора не должно быть пустой";
+            }
+            if (string.IsNullOrEmpty(doctor.ThirdDoctorName))
+            {
+                return "Отчество доктора не должно быть пустым";
+            }
+            if (string.IsNullOrEmpty(doctor.DoctorSpeciality))
+            {
+                return "Специальность доктора не должна быть пустой";
+            }
+            if (doctor.DoctorBirthdate > DateTime.Now || doctor.DoctorBirthdate < new DateTime(1900, 01, 01))
+            {
+                return "Дата рождения доктора должна быть меньше сегодняшей и больше, чем 1900 года";
+            }
+            if (string.IsNullOrEmpty(doctor.DoctorExperience))
+            {
+                return "Опыт доктора не должен быть пустым";
+            }
+
+            this.Entry(doctor).State = EntityState.Modified;
+            this.SaveChanges();
+            if (UpdateDoctors != null)
+            {
+                UpdateDoctors.Invoke();
+            }
+            return null;
+        }
 
         public string CheckAndAddPatient(string firstPatientName, string secondPatientName, string thirdPatientName, string patientSpeciality, DateTime patientBirthdate)
         {
@@ -127,6 +162,40 @@ namespace MedicalApplication.Models
             }
             return null;
         }
+        public string CheckAndChangePatient(Patient patient)
+        {
+            if (string.IsNullOrEmpty(patient.FirstPatientName))
+            {
+                return "Имя пациента не должно быть пустым";
+            }
+            if (string.IsNullOrEmpty(patient.SecondPatientName))
+            {
+                return "Фамилия пациента не должно быть пустой";
+            }
+            if (string.IsNullOrEmpty(patient.ThirdPatientName))
+            {
+                return "Отчество пациента не должно быть пустым";
+            }
+            if (string.IsNullOrEmpty(patient.PatientSpeciality))
+            {
+                return "Специальность пациента не должна быть пустой";
+            }
+            if (patient.PatientBirthdate > DateTime.Now || patient.PatientBirthdate < new DateTime(1900, 01, 01))
+            {
+                return "Дата рождения пациента должна быть меньше сегодняшей и больше, чем 1900 года";
+            }
+
+
+            
+
+            this.Entry(patient).State = EntityState.Modified;
+            this.SaveChanges();
+            if (UpdatePatients != null)
+            {
+                UpdatePatients.Invoke();
+            }
+            return null;
+        }
 
         public string CheckAndAddRecording(Doctor doctor, Patient patient, DateTime meetingTime, string recordingStatus, string recordingCause)
         {
@@ -168,7 +237,41 @@ namespace MedicalApplication.Models
                 return "Приём не выбран";
             }
             this.Recordings.Remove(recording);
+            this.SaveChanges();
 
+
+            if (UpdateRecordings != null)
+            {
+                UpdateRecordings.Invoke();
+            }
+            return null;
+        }
+
+        public string CheckAndChangeRecording(Recording recording)
+        {
+            if (recording.Doctor == null)
+            {
+                return "Доктор не должен быть пустым";
+            }
+            if (recording.Patient == null)
+            {
+                return "Пациент не должен быть пустым";
+            }
+            if (recording.MeetingTime < new DateTime(1900, 01, 01))
+            {
+                return "Дата приема не должна быть столь далека";
+            }
+            if (string.IsNullOrEmpty(recording.RecordingCause))
+            {
+                return "Причина приема не должна быть пустой";
+            }
+            if (string.IsNullOrEmpty(recording.RecordingCause))
+            {
+                return "Статус приёма не должен быть пустым";
+            }
+
+            this.Entry(recording).State = EntityState.Modified;
+            this.SaveChanges();
             if (UpdateRecordings != null)
             {
                 UpdateRecordings.Invoke();

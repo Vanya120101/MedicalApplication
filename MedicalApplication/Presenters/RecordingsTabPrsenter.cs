@@ -16,14 +16,28 @@ namespace MedicalApplication.Presenters
         public RecordingsTabPrsenter(IBaseForm form) : base(form)
         {
             MedicalDbContext.Recordings.Load();
+            MedicalDbContext.Patients.Load();
+            MedicalDbContext.Doctors.Load();
+
+            MedicalDbContext.UpdateRecordings += MedicalDbContext_UpdateRecordings;
             Initialize();
 
+        }
+
+        private void MedicalDbContext_UpdateRecordings()
+        {
+
+            MedicalDbContext.Recordings.Load();
+            MedicalDbContext.Patients.Load();
+            MedicalDbContext.Doctors.Load();
+            Form.Table = MedicalDbContext.Recordings.Local.ToBindingList();
+            Form.UpdateTable();
         }
 
         protected override void Initialize()
         {
             Form.ClickOnAdd += Form_ClickOnAdd;
-            Form.ClickOnRemove += Form_ClickOnRemove;
+            Form.ClickOnRemove += () => { Form_ClickOnRemove(Form.CurrentObject, Form.CurrentSelectedIndex); };
             Form.ClickOnShowInformation += Form_ClickOnShowInformation;
 
             Form.Table = MedicalDbContext.Recordings.Local.ToBindingList();
@@ -31,11 +45,27 @@ namespace MedicalApplication.Presenters
 
         private void Form_ClickOnShowInformation()
         {
-            PresenterService.Show(Presenters.RecordingForm, FormMode.IsShowing);
+            PresenterService.Show(Presenters.RecordingForm, FormMode.IsShowing, Form.CurrentObject);
         }
 
-        private void Form_ClickOnRemove()
+        private void Form_ClickOnRemove(Recording recording, int currentIndex)
         {
+            string errorMessage = MedicalDbContext.CheckAndRemoveRecording(recording);
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                Form.ShowErrorMessage(errorMessage);
+                return;
+            }
+
+            SetSelectedIndex(currentIndex);
+        }
+
+        private void SetSelectedIndex(int currentIndex)
+        {
+            if (currentIndex >= 0 && currentIndex < Form.Table.Count)
+            {
+                Form.CurrentSelectedIndex = currentIndex - 1;
+            }
         }
 
         private void Form_ClickOnAdd()

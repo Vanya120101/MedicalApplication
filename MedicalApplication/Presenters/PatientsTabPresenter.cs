@@ -16,13 +16,21 @@ namespace MedicalApplication.Presenters
         public PatientsTabPresenter(IBaseForm form) : base(form)
         {
             MedicalDbContext.Patients.Load();
+            MedicalDbContext.UpdatePatients += MedicalDbContext_UpdatePatients;
             Initialize();
+        }
+
+        private void MedicalDbContext_UpdatePatients()
+        {
+            MedicalDbContext.Patients.Load();
+            Form.Table = MedicalDbContext.Patients.Local.ToBindingList();
+            Form.UpdateTable();
         }
 
         protected override void Initialize()
         {
             Form.ClickOnAdd += Form_ClickOnAdd;
-            Form.ClickOnRemove += Form_ClickOnRemove;
+            Form.ClickOnRemove += () => {Form_ClickOnRemove(Form.CurrentObject, Form.CurrentSelectedIndex); };
             Form.ClickOnShowInformation += Form_ClickOnShowInformation;
 
             Form.Table = MedicalDbContext.Patients.Local.ToBindingList();
@@ -30,11 +38,27 @@ namespace MedicalApplication.Presenters
 
         private void Form_ClickOnShowInformation()
         {
-            PresenterService.Show(Presenters.PatientForm, FormMode.IsShowing);
+            PresenterService.Show<Patient>(Presenters.PatientForm, FormMode.IsShowing, Form.CurrentObject);
         }
 
-        private void Form_ClickOnRemove()
+        private void Form_ClickOnRemove(Patient patient, int currentIndex)
         {
+            string errorMessage = MedicalDbContext.CheckAndRemovePatient(patient);
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                Form.ShowErrorMessage(errorMessage);
+                return;
+            }
+
+            
+        }
+
+        private void SetSelectedIndex(int currentIndex)
+        {
+            if (currentIndex >= 0 && currentIndex < Form.Table.Count)
+            {
+                Form.CurrentSelectedIndex = currentIndex - 1;
+            }
         }
 
         private void Form_ClickOnAdd()

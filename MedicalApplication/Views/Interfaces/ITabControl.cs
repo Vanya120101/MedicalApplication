@@ -18,5 +18,7 @@ namespace MedicalApplication.Views.Interfaces
         T CurrentObject { get; set; }
 
         int CurrentSelectedIndex { get; set; }
+
+        void UpdateTable();
     }
 }

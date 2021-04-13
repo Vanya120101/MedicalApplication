@@ -31,5 +31,10 @@ namespace MedicalApplication.Domain_Models
 
         }
 
+        public override string ToString()
+        {
+            return SecondPatientName + " " + FirstPatientName + " " + ThirdPatientName;
+        }
+
     }
 }

@@ -45,7 +45,9 @@ namespace MedicalApplication.Views.Controls
             this.PatientsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PatientsList.Location = new System.Drawing.Point(0, 0);
             this.PatientsList.Margin = new System.Windows.Forms.Padding(0);
+            this.PatientsList.MultiSelect = false;
             this.PatientsList.Name = "PatientsList";
+            this.PatientsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.PatientsList.Size = new System.Drawing.Size(1300, 400);
             this.PatientsList.TabIndex = 4;
             // 

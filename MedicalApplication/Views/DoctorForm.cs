@@ -165,6 +165,7 @@ namespace MedicalApplication.Views
                 case FormMode.IsShowing:
                     if (ClickOnChangeDoctor != null)
                     {
+                        FormMode = FormMode.IsEditing;
                         ClickOnChangeDoctor.Invoke();
                     }
                     break;

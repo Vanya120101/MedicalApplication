@@ -39,6 +39,7 @@ namespace MedicalApplication.Views
             }
             else if (FormMode == FormMode.IsEditing)
             {
+
                 this.DoEditingMode();
             }
         }
@@ -116,6 +117,7 @@ namespace MedicalApplication.Views
                 case FormMode.IsShowing:
                     if (ClickOnChangePatient != null)
                     {
+                        FormMode = FormMode.IsEditing;
                         ClickOnChangePatient.Invoke();
                     }
                     break;

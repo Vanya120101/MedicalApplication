@@ -24,8 +24,8 @@ namespace MedicalApplication.Presenters
         private void MedicalDbContext_Update()
         {
             MedicalDbContext.Doctors.Load();
-
             Form.Table = MedicalDbContext.Doctors.Local.ToBindingList();
+            Form.UpdateTable();
         }
 
         protected override void Initialize()
@@ -69,7 +69,7 @@ namespace MedicalApplication.Presenters
 
         }
 
-       
+
 
 
     }

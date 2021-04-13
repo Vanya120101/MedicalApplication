@@ -134,6 +134,10 @@ namespace MedicalApplication.Views.Controls
             MessageBox.Show(errorMessage);
         }
 
+        public void UpdateTable()
+        {
+            this.DoctorsList.Refresh();
+        }
         #endregion
 
     }

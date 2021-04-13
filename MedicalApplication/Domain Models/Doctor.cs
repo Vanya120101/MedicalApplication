@@ -27,6 +27,11 @@ namespace MedicalApplication.Domain_Models
             DoctorExperience = doctorExperience;
         }
 
-      
+        public override string ToString()
+        {
+            return SecondDoctorName + " " + FirstDoctorName + " " + ThirdDoctorName;
+        }
+
+
     }
 }

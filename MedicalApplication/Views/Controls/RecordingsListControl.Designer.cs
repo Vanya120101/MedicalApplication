@@ -45,7 +45,9 @@ namespace MedicalApplication.Views.Controls
             this.RecordingsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RecordingsList.Location = new System.Drawing.Point(0, 0);
             this.RecordingsList.Margin = new System.Windows.Forms.Padding(0);
+            this.RecordingsList.MultiSelect = false;
             this.RecordingsList.Name = "RecordingsList";
+            this.RecordingsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.RecordingsList.Size = new System.Drawing.Size(1300, 300);
             this.RecordingsList.TabIndex = 6;
             // 

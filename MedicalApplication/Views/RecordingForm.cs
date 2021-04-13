@@ -1,6 +1,8 @@
-﻿using MedicalApplication.Presenters;
+﻿using MedicalApplication.Domain_Models;
+using MedicalApplication.Presenters;
 using MedicalApplication.Views.Interfaces;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -65,8 +67,8 @@ namespace MedicalApplication.Views
         }
         private void SetEnabled(bool isEnabled)
         {
-            DoctorFullNameBox.Enabled = isEnabled;
-            PatientFullNameBox.Enabled = isEnabled;
+            DoctorBox.Enabled = isEnabled;
+            PatientBox.Enabled = isEnabled;
             RecordingDateBox.Enabled = isEnabled;
             RecordingStatusBox.Enabled = isEnabled;
             RecordingCauseBox.Enabled = isEnabled;
@@ -109,6 +111,7 @@ namespace MedicalApplication.Views
                 case FormMode.IsShowing:
                     if (ClickOnChangeRecording != null)
                     {
+                        FormMode = FormMode.IsEditing;
                         ClickOnChangeRecording.Invoke();
                     }
                     break;
@@ -156,8 +159,23 @@ namespace MedicalApplication.Views
         public event Action ClickOnChangeRecording;
         public event Action ClickOnOtherDate;
 
-        public string DoctorFullName { get => this.DoctorFullNameBox.Text; set => this.DoctorFullNameBox.Text = value; }
-        public string PatientFullName { get => this.PatientFullNameBox.Text; set => this.PatientFullNameBox.Text = value; }
+        public Doctor Doctor { get => this.DoctorBox.SelectedItem as Doctor; set => this.DoctorBox.SelectedItem = value; }
+        public Patient Patient { get => this.PatientBox.SelectedItem as Patient; set => this.PatientBox.SelectedItem = value; }
+        public BindingList<Doctor> DoctorsList
+        {
+            set
+            {
+                this.DoctorBox.DataSource = value;
+            }
+        }
+
+        public BindingList<Patient> PatientsList
+        {
+            set
+            {
+                this.PatientBox.DataSource = value;
+            }
+        }
         public DateTime MeetingTime { get => this.RecordingDateBox.Value; set => this.RecordingDateBox.Value = value; }
         public string RecordingStatus { get => this.RecordingStatusBox.Text; set => this.RecordingStatusBox.Text = value; }
         public string RecordingCause { get => this.RecordingCauseBox.Text; set => this.RecordingCauseBox.Text = value; }
@@ -181,8 +199,6 @@ namespace MedicalApplication.Views
 
         public void Clear()
         {
-            DoctorFullNameBox.Clear();
-            PatientFullNameBox.Clear();
             RecordingDateBox.Value = DateTime.Today;
             RecordingStatusBox.Clear();
             RecordingCauseBox.Clear();
