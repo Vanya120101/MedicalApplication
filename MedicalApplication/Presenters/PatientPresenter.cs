@@ -1,4 +1,5 @@
 ﻿using MedicalApplication.Domain_Models;
+using MedicalApplication.Models;
 using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace MedicalApplication.Presenters
 
         private void Form_ClickOnCreatePatient(string patientFirstName, string patientSecondName, string patientThirdName, DateTime patientBirthdate, string patientSpeciality)
         {
-            string errorMessage = MedicalDbContext.CheckAndAddPatient(patientThirdName, patientSecondName, patientThirdName, patientSpeciality, patientBirthdate);
+            string errorMessage = Patients.CheckAddPatient(patientFirstName, patientSecondName, patientThirdName, patientSpeciality, patientBirthdate);
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 Form.ShowErrorMessage(errorMessage);
@@ -47,11 +48,11 @@ namespace MedicalApplication.Presenters
                 return;
             }
 
-            Form.PatientFirstName = CurrentPatient.FirstPatientName;
-            Form.PatientSecondName = CurrentPatient.SecondPatientName;
-            Form.PatientThirdName = CurrentPatient.ThirdPatientName;
-            Form.PatientSpeciality = CurrentPatient.PatientSpeciality;
-            Form.PatientBirthdate = CurrentPatient.PatientBirthdate;
+            Form.PatientFirstName = CurrentPatient.FirstName;
+            Form.PatientSecondName = CurrentPatient.SecondName;
+            Form.PatientThirdName = CurrentPatient.ThirdName;
+            Form.PatientSpeciality = CurrentPatient.Speciality;
+            Form.PatientBirthdate = CurrentPatient.Birthdate;
 
             this.Show(formMode);
         }
@@ -64,18 +65,13 @@ namespace MedicalApplication.Presenters
                 return;
             }
 
-            CurrentPatient.FirstPatientName = Form.PatientFirstName;
-            CurrentPatient.SecondPatientName = Form.PatientSecondName;
-            CurrentPatient.ThirdPatientName = Form.PatientThirdName;
-            CurrentPatient.PatientSpeciality = Form.PatientSpeciality;
-            CurrentPatient.PatientBirthdate = CurrentPatient.PatientBirthdate;
-
-            string errorMessage = MedicalDbContext.CheckAndChangePatient(CurrentPatient);
+            string errorMessage = Patients.CheckChangePatient(CurrentPatient, Form.PatientFirstName, Form.PatientSecondName, Form.PatientThirdName, Form.PatientSpeciality, Form.PatientBirthdate);
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 Form.ShowErrorMessage(errorMessage);
                 return;
             }
+
             PresenterService.Close(Presenters.PatientForm);
         }
 

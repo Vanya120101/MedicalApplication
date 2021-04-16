@@ -1,4 +1,5 @@
 ﻿using MedicalApplication.Domain_Models;
+using MedicalApplication.Models;
 using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace MedicalApplication.Presenters
 
         private void Form_ClickOnCreateDoctor(string doctorFirstName, string doctorSecondName, string doctorThirdName, DateTime doctorBirthdate, string doctorSpeciality, string doctorExperience)
         {
-            string errorMessage = MedicalDbContext.CheckAndAddDoctor(doctorFirstName, doctorSecondName, doctorThirdName, doctorSpeciality, doctorBirthdate, doctorExperience);
+            string errorMessage = Doctors.CheckAddDoctor(doctorFirstName, doctorSecondName, doctorThirdName, doctorBirthdate, doctorSpeciality,doctorExperience);
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 Form.ShowErrorMessage(errorMessage);
@@ -48,12 +49,12 @@ namespace MedicalApplication.Presenters
                 return;
             }
 
-            Form.DoctorFirstName = CurrentDoctor.FirstDoctorName;
-            Form.DoctorSecondName = CurrentDoctor.SecondDoctorName;
-            Form.DoctorThirdName = CurrentDoctor.ThirdDoctorName;
-            Form.DoctorBirthdate = CurrentDoctor.DoctorBirthdate;
-            Form.DoctorSpeciality = CurrentDoctor.DoctorSpeciality;
-            Form.DoctorExperience = CurrentDoctor.DoctorExperience;
+            Form.DoctorFirstName = CurrentDoctor.FirstName;
+            Form.DoctorSecondName = CurrentDoctor.SecondName;
+            Form.DoctorThirdName = CurrentDoctor.ThirdName;
+            Form.DoctorBirthdate = CurrentDoctor.Birthdate;
+            Form.DoctorSpeciality = CurrentDoctor.Speciality;
+            Form.DoctorExperience = CurrentDoctor.Experience;
             this.Show(formMode);
         }
         private void Form_ClickOnSaveDoctorChanged()
@@ -64,18 +65,13 @@ namespace MedicalApplication.Presenters
                 return;
             }
 
-            CurrentDoctor.FirstDoctorName = Form.DoctorFirstName;
-            CurrentDoctor.SecondDoctorName = Form.DoctorSecondName;
-            CurrentDoctor.ThirdDoctorName = Form.DoctorThirdName;
-            CurrentDoctor.DoctorBirthdate = Form.DoctorBirthdate;
-            CurrentDoctor.DoctorSpeciality = Form.DoctorSpeciality;
-            CurrentDoctor.DoctorExperience = Form.DoctorExperience;
-            string errorMessage = MedicalDbContext.CheckAndChangeDoctor(CurrentDoctor);
+            string errorMessage = Doctors.CheckChangeDoctor(CurrentDoctor, Form.DoctorFirstName, Form.DoctorSecondName, Form.DoctorThirdName, Form.DoctorBirthdate, Form.DoctorSpeciality, Form.DoctorExperience);
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 Form.ShowErrorMessage(errorMessage);
                 return;
             }
+
             PresenterService.Close(Presenters.DoctorForm);
         }
 

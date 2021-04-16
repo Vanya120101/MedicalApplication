@@ -29,19 +29,37 @@ namespace MedicalApplication.Views.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.RecordingsList = new System.Windows.Forms.DataGridView();
             this.RecordingInformationButton = new System.Windows.Forms.Button();
             this.AddRecordingButton = new System.Windows.Forms.Button();
             this.RemoveRecordButton = new System.Windows.Forms.Button();
             this.BottomPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.recordingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meetingTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.causeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.RecordingsList)).BeginInit();
             this.BottomPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recordingBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // RecordingsList
             // 
+            this.RecordingsList.AutoGenerateColumns = false;
             this.RecordingsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RecordingsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RecordingsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.doctorDataGridViewTextBoxColumn,
+            this.patientDataGridViewTextBoxColumn,
+            this.meetingTimeDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.causeDataGridViewTextBoxColumn});
+            this.RecordingsList.DataSource = this.recordingBindingSource;
             this.RecordingsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RecordingsList.Location = new System.Drawing.Point(0, 0);
             this.RecordingsList.Margin = new System.Windows.Forms.Padding(0);
@@ -128,6 +146,46 @@ namespace MedicalApplication.Views.Controls
             this.BottomPanel.Size = new System.Drawing.Size(1300, 100);
             this.BottomPanel.TabIndex = 5;
             // 
+            // recordingBindingSource
+            // 
+            this.recordingBindingSource.DataSource = typeof(MedicalApplication.Domain_Models.Recording);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // doctorDataGridViewTextBoxColumn
+            // 
+            this.doctorDataGridViewTextBoxColumn.DataPropertyName = "Doctor";
+            this.doctorDataGridViewTextBoxColumn.HeaderText = "Doctor";
+            this.doctorDataGridViewTextBoxColumn.Name = "doctorDataGridViewTextBoxColumn";
+            // 
+            // patientDataGridViewTextBoxColumn
+            // 
+            this.patientDataGridViewTextBoxColumn.DataPropertyName = "Patient";
+            this.patientDataGridViewTextBoxColumn.HeaderText = "Patient";
+            this.patientDataGridViewTextBoxColumn.Name = "patientDataGridViewTextBoxColumn";
+            // 
+            // meetingTimeDataGridViewTextBoxColumn
+            // 
+            this.meetingTimeDataGridViewTextBoxColumn.DataPropertyName = "MeetingTime";
+            this.meetingTimeDataGridViewTextBoxColumn.HeaderText = "MeetingTime";
+            this.meetingTimeDataGridViewTextBoxColumn.Name = "meetingTimeDataGridViewTextBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // causeDataGridViewTextBoxColumn
+            // 
+            this.causeDataGridViewTextBoxColumn.DataPropertyName = "Cause";
+            this.causeDataGridViewTextBoxColumn.HeaderText = "Cause";
+            this.causeDataGridViewTextBoxColumn.Name = "causeDataGridViewTextBoxColumn";
+            // 
             // RecordingsListControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +197,7 @@ namespace MedicalApplication.Views.Controls
             ((System.ComponentModel.ISupportInitialize)(this.RecordingsList)).EndInit();
             this.BottomPanel.ResumeLayout(false);
             this.BottomPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.recordingBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,5 +209,12 @@ namespace MedicalApplication.Views.Controls
         private System.Windows.Forms.Button AddRecordingButton;
         private System.Windows.Forms.Button RemoveRecordButton;
         private System.Windows.Forms.FlowLayoutPanel BottomPanel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meetingTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn causeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource recordingBindingSource;
     }
 }

@@ -29,43 +29,51 @@ namespace MedicalApplication.Presenters
             Form.ClickOnOtherDate += Form_ClickOnOtherDate;
             Form.ClickOnSaveRecordingChanged += Form_ClickOnSaveRecordingChanged;
 
-            MedicalDbContext.Patients.Load();
-            MedicalDbContext.Doctors.Load();
+            //MedicalDbContext.Patients.Load();
+            //MedicalDbContext.Doctors.Load();
 
-            Form.PatientsList = MedicalDbContext.Patients.Local.ToBindingList();
-            Form.DoctorsList = MedicalDbContext.Doctors.Local.ToBindingList();
+            Form.PatientsList = Patients.GetPatients();
+            Form.DoctorsList = Doctors.GetDoctors();
 
-            MedicalDbContext.UpdateDoctors += MedicalDbContext_Update;
-            MedicalDbContext.UpdatePatients += MedicalDbContext_Update;
+            Doctors.UpdateDoctors += MedicalDbContext_Update;
+            Patients.UpdatePatients += MedicalDbContext_Update;
         }
 
         private void MedicalDbContext_Update()
         {
-            Form.Clear();
+            //Form.Clear();
+
+
             //MedicalDbContext.Patients.Load();
             //MedicalDbContext.Doctors.Load();
             //Form.PatientsList = MedicalDbContext.Patients.Local.ToBindingList();
             //Form.DoctorsList = MedicalDbContext.GetDoctors();
-            Form.DoctorsList = new BindingList<Doctor>();
 
-            foreach (Doctor doctor in MedicalDbContext.Doctors)
-            {
-                Form.DoctorsList.Add(doctor);
-            }
 
-            Form.PatientsList = new BindingList<Patient>();
 
-            foreach (Patient patient in MedicalDbContext.Patients)
-            {
-                Form.PatientsList.Add(patient);
-            }
-            
+            //Form.DoctorsList = new BindingList<Doctor>();
+
+            //foreach (Doctor doctor in MedicalDbContext.Doctors)
+            //{
+            //    Form.DoctorsList.Add(doctor);
+            //}
+
+            //Form.PatientsList = new BindingList<Patient>();
+
+            //foreach (Patient patient in MedicalDbContext.Patients)
+            //{
+            //    Form.PatientsList.Add(patient);
+            //}
+
+            Form.PatientsList = Patients.GetPatients();
+            Form.DoctorsList = Doctors.GetDoctors();
+
             Form.RefreshTable();
         }
 
         private void Form_ClickOnCreateRecording(Doctor doctor, Patient patient, DateTime meetingTime, string recordingCause, string recordingStatus)
         {
-            string errorMessage = MedicalDbContext.CheckAndAddRecording(doctor, patient, meetingTime, recordingStatus, recordingCause);
+            string errorMessage = Recordings.ChecAddRecording(doctor, patient, meetingTime, recordingStatus, recordingCause);
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 Form.ShowErrorMessage(errorMessage);
@@ -77,17 +85,24 @@ namespace MedicalApplication.Presenters
         public override void Show<T>(FormMode formMode, T currentObject)
         {
             CurrentRecording = currentObject as Recording;
+
             if (CurrentRecording == null)
             {
                 Form.ShowErrorMessage("Что-то пошло не так");
                 return;
             }
 
+
+
             Form.Doctor = CurrentRecording.Doctor;
+
             Form.Patient = CurrentRecording.Patient;
+
             Form.MeetingTime = CurrentRecording.MeetingTime;
-            Form.RecordingCause = CurrentRecording.RecordingCause;
-            Form.RecordingStatus = CurrentRecording.RecordingStatus;
+            Form.RecordingCause = CurrentRecording.Cause;
+            Form.RecordingStatus = CurrentRecording.Status;
+
+
 
             this.Show(formMode);
         }
@@ -103,10 +118,10 @@ namespace MedicalApplication.Presenters
             CurrentRecording.Doctor = Form.Doctor;
             CurrentRecording.Patient = Form.Patient;
             CurrentRecording.MeetingTime = Form.MeetingTime;
-            CurrentRecording.RecordingCause = Form.RecordingCause;
-            CurrentRecording.RecordingStatus = Form.RecordingStatus;
+            CurrentRecording.Cause = Form.RecordingCause;
+            CurrentRecording.Status = Form.RecordingStatus;
 
-            string errorMessage = MedicalDbContext.CheckAndChangeRecording(CurrentRecording);
+            string errorMessage = Recordings.CheckChangeRecording(CurrentRecording, Form.Doctor, Form.Patient, Form.MeetingTime, Form.RecordingCause, Form.RecordingStatus);
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 Form.ShowErrorMessage(errorMessage);
@@ -119,7 +134,7 @@ namespace MedicalApplication.Presenters
         {
         }
 
-        
+
 
         private void Form_ClickOnChangeRecording()
         {

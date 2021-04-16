@@ -29,6 +29,7 @@ namespace MedicalApplication.Views.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DoctorsList = new System.Windows.Forms.DataGridView();
@@ -36,8 +37,17 @@ namespace MedicalApplication.Views.Controls
             this.AddDoctorButton = new System.Windows.Forms.Button();
             this.DoctorInformationButton = new System.Windows.Forms.Button();
             this.BottomPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secondNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thirdNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specialityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.experienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsList)).BeginInit();
             this.BottomPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DoctorsList
@@ -45,6 +55,7 @@ namespace MedicalApplication.Views.Controls
             this.DoctorsList.AllowUserToAddRows = false;
             this.DoctorsList.AllowUserToDeleteRows = false;
             this.DoctorsList.AllowUserToResizeRows = false;
+            this.DoctorsList.AutoGenerateColumns = false;
             this.DoctorsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.DoctorsList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.DoctorsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -58,6 +69,15 @@ namespace MedicalApplication.Views.Controls
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DoctorsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DoctorsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DoctorsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.secondNameDataGridViewTextBoxColumn,
+            this.thirdNameDataGridViewTextBoxColumn,
+            this.specialityDataGridViewTextBoxColumn,
+            this.birthdateDataGridViewTextBoxColumn,
+            this.experienceDataGridViewTextBoxColumn});
+            this.DoctorsList.DataSource = this.doctorBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -154,6 +174,66 @@ namespace MedicalApplication.Views.Controls
             this.BottomPanel.Size = new System.Drawing.Size(1300, 100);
             this.BottomPanel.TabIndex = 0;
             // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataSource = typeof(MedicalApplication.Domain_Models.Doctor);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 39;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // secondNameDataGridViewTextBoxColumn
+            // 
+            this.secondNameDataGridViewTextBoxColumn.DataPropertyName = "SecondName";
+            this.secondNameDataGridViewTextBoxColumn.HeaderText = "SecondName";
+            this.secondNameDataGridViewTextBoxColumn.Name = "secondNameDataGridViewTextBoxColumn";
+            this.secondNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.secondNameDataGridViewTextBoxColumn.Width = 95;
+            // 
+            // thirdNameDataGridViewTextBoxColumn
+            // 
+            this.thirdNameDataGridViewTextBoxColumn.DataPropertyName = "ThirdName";
+            this.thirdNameDataGridViewTextBoxColumn.HeaderText = "ThirdName";
+            this.thirdNameDataGridViewTextBoxColumn.Name = "thirdNameDataGridViewTextBoxColumn";
+            this.thirdNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thirdNameDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // specialityDataGridViewTextBoxColumn
+            // 
+            this.specialityDataGridViewTextBoxColumn.DataPropertyName = "Speciality";
+            this.specialityDataGridViewTextBoxColumn.HeaderText = "Speciality";
+            this.specialityDataGridViewTextBoxColumn.Name = "specialityDataGridViewTextBoxColumn";
+            this.specialityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.specialityDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // birthdateDataGridViewTextBoxColumn
+            // 
+            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
+            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthdateDataGridViewTextBoxColumn.Width = 72;
+            // 
+            // experienceDataGridViewTextBoxColumn
+            // 
+            this.experienceDataGridViewTextBoxColumn.DataPropertyName = "Experience";
+            this.experienceDataGridViewTextBoxColumn.HeaderText = "Experience";
+            this.experienceDataGridViewTextBoxColumn.Name = "experienceDataGridViewTextBoxColumn";
+            this.experienceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.experienceDataGridViewTextBoxColumn.Width = 83;
+            // 
             // DoctorsListControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +246,7 @@ namespace MedicalApplication.Views.Controls
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsList)).EndInit();
             this.BottomPanel.ResumeLayout(false);
             this.BottomPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,5 +258,13 @@ namespace MedicalApplication.Views.Controls
         private System.Windows.Forms.Button AddDoctorButton;
         private System.Windows.Forms.Button DoctorInformationButton;
         private System.Windows.Forms.FlowLayoutPanel BottomPanel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn secondNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thirdNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specialityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn experienceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource doctorBindingSource;
     }
 }

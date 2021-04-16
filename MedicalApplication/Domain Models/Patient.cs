@@ -10,30 +10,35 @@ namespace MedicalApplication.Domain_Models
     {
         public int Id { get; set; }
 
-        public string FirstPatientName { get; set; }
-        public string SecondPatientName { get; set; }
-        public string ThirdPatientName { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string ThirdName { get; set; }
 
-        public string PatientSpeciality { get; set; }
-        public DateTime PatientBirthdate { get; set; }
+        public string Speciality { get; set; }
+        public DateTime Birthdate { get; set; }
+
+        public virtual ICollection<Recording> Recordings { get; set; }
 
         public Patient(string firstPatientName, string secondPatientName, string thirdPatientName, string patientSpeciality, DateTime patientBirthdate)
         {
-            FirstPatientName = firstPatientName;
-            SecondPatientName = secondPatientName;
-            ThirdPatientName = thirdPatientName;
-            PatientSpeciality = patientSpeciality;
-            PatientBirthdate = patientBirthdate;
+            FirstName = firstPatientName;
+            SecondName = secondPatientName;
+            ThirdName = thirdPatientName;
+            Speciality = patientSpeciality;
+            Birthdate = patientBirthdate;
+
+            Recordings = new List<Recording>();
         }
 
         public Patient()
         {
+            Recordings = new List<Recording>();
 
         }
 
         public override string ToString()
         {
-            return SecondPatientName + " " + FirstPatientName + " " + ThirdPatientName;
+            return SecondName + " " + FirstName + " " + ThirdName;
         }
 
     }

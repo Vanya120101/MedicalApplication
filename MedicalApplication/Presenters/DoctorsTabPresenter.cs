@@ -16,15 +16,17 @@ namespace MedicalApplication.Presenters
         protected override ITabControl<Doctor> Form { get; set; }
         public DoctorsTabPresenter(IBaseForm form) : base(form)
         {
-            MedicalDbContext.Doctors.Load();
-            MedicalDbContext.UpdateDoctors += MedicalDbContext_Update;
+            //MedicalDbContext.Doctors.Load();
+            Doctors.UpdateDoctors += MedicalDbContext_Update;
             Initialize();
         }
 
         private void MedicalDbContext_Update()
         {
-            MedicalDbContext.Doctors.Load();
-            Form.Table = MedicalDbContext.Doctors.Local.ToBindingList();
+            //MedicalDbContext.Doctors.Load();
+            //Form.Table = MedicalDbContext.Doctors.Local.ToBindingList();
+
+            Form.Table = Doctors.GetDoctors();
             Form.UpdateTable();
         }
 
@@ -34,7 +36,7 @@ namespace MedicalApplication.Presenters
             Form.ClickOnRemove += () => { Form_ClickOnRemove(Form.CurrentObject, Form.CurrentSelectedIndex); };
             Form.ClickOnShowInformation += Form_ClickOnShowInformation;
 
-            Form.Table = MedicalDbContext.Doctors.Local.ToBindingList();
+            Form.Table = Doctors.GetDoctors();
         }
 
         private void Form_ClickOnShowInformation()
@@ -45,7 +47,7 @@ namespace MedicalApplication.Presenters
         private void Form_ClickOnRemove(Doctor doctor, int currentIndex)
         {
 
-            string errorMessage = MedicalDbContext.CheckAndRemoveDoctor(doctor);
+            string errorMessage = Doctors.CheckRemoveDoctor(doctor);
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 Form.ShowErrorMessage(errorMessage);

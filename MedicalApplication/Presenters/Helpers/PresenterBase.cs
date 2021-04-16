@@ -11,12 +11,10 @@ namespace MedicalApplication.Presenters
     abstract class PresenterBase<T> where T:IBaseForm
     {
         protected abstract T Form { get; set; }
-        protected MedicalDbContext MedicalDbContext;
 
         public PresenterBase(IBaseForm form)
         {
             Form = (T)form;
-            MedicalDbContext = new MedicalDbContext();
         }
 
         protected abstract void Initialize();

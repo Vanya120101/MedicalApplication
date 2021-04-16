@@ -9,27 +9,33 @@ namespace MedicalApplication.Domain_Models
     public class Doctor
     {
         public int Id { get; set; }
-        public string FirstDoctorName { get; set; }
-        public string SecondDoctorName { get; set; }
-        public string ThirdDoctorName { get; set; }
-        public string DoctorSpeciality { get; set; }
-        public DateTime DoctorBirthdate { get; set; }
-        public string DoctorExperience { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string ThirdName { get; set; }
+        public string Speciality { get; set; }
+        public DateTime Birthdate { get; set; }
+        public string Experience { get; set; }
 
-        public Doctor() { }
+        public virtual ICollection<Recording> Recordings { get; set; }
+
+        public Doctor()
+        { 
+            Recordings = new List<Recording>();
+        }
         public Doctor(string firstDoctorName, string secondDoctorName, string thirdDoctorName, string doctorSpeciality, DateTime doctorBirthdate, string doctorExperience)
         {
-            FirstDoctorName = firstDoctorName;
-            SecondDoctorName = secondDoctorName;
-            ThirdDoctorName = thirdDoctorName;
-            DoctorSpeciality = doctorSpeciality;
-            DoctorBirthdate = doctorBirthdate;
-            DoctorExperience = doctorExperience;
+            FirstName = firstDoctorName;
+            SecondName = secondDoctorName;
+            ThirdName = thirdDoctorName;
+            Speciality = doctorSpeciality;
+            Birthdate = doctorBirthdate;
+            Experience = doctorExperience;
+            Recordings = new List<Recording>();
         }
 
         public override string ToString()
         {
-            return SecondDoctorName + " " + FirstDoctorName + " " + ThirdDoctorName;
+            return SecondName + " " + FirstName + " " + ThirdName;
         }
 
 

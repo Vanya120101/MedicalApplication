@@ -15,11 +15,11 @@ namespace MedicalApplication.Presenters
         protected override ITabControl<Recording> Form { get; set; }
         public RecordingsTabPrsenter(IBaseForm form) : base(form)
         {
-            MedicalDbContext.Recordings.Load();
-            MedicalDbContext.Patients.Load();
-            MedicalDbContext.Doctors.Load();
+            //MedicalDbContext.Recordings.Load();
+            //MedicalDbContext.Patients.Load();
+            //MedicalDbContext.Doctors.Load();
 
-            MedicalDbContext.UpdateRecordings += MedicalDbContext_UpdateRecordings;
+            Recordings.UpdateRecordings += MedicalDbContext_UpdateRecordings;
             Initialize();
 
         }
@@ -27,10 +27,12 @@ namespace MedicalApplication.Presenters
         private void MedicalDbContext_UpdateRecordings()
         {
 
-            MedicalDbContext.Recordings.Load();
-            MedicalDbContext.Patients.Load();
-            MedicalDbContext.Doctors.Load();
-            Form.Table = MedicalDbContext.Recordings.Local.ToBindingList();
+            //MedicalDbContext.Recordings.Load();
+            //MedicalDbContext.Patients.Load();
+            //MedicalDbContext.Doctors.Load();
+            //Form.Table = MedicalDbContext.Recordings.Local.ToBindingList();
+
+            Form.Table = Recordings.GetRecordings();
             Form.UpdateTable();
         }
 
@@ -40,7 +42,7 @@ namespace MedicalApplication.Presenters
             Form.ClickOnRemove += () => { Form_ClickOnRemove(Form.CurrentObject, Form.CurrentSelectedIndex); };
             Form.ClickOnShowInformation += Form_ClickOnShowInformation;
 
-            Form.Table = MedicalDbContext.Recordings.Local.ToBindingList();
+            Form.Table = Recordings.GetRecordings();
         }
 
         private void Form_ClickOnShowInformation()
@@ -50,7 +52,7 @@ namespace MedicalApplication.Presenters
 
         private void Form_ClickOnRemove(Recording recording, int currentIndex)
         {
-            string errorMessage = MedicalDbContext.CheckAndRemoveRecording(recording);
+            string errorMessage = Recordings.CheckRemoveRecording(recording);
             if (!string.IsNullOrEmpty(errorMessage))
             {
                 Form.ShowErrorMessage(errorMessage);
@@ -75,7 +77,7 @@ namespace MedicalApplication.Presenters
 
         public void Update()
         {
-            Form.Table = MedicalDbContext.Recordings.Local.ToBindingList();
+            Form.Table = Recordings.GetRecordings();
 
         }
     }
