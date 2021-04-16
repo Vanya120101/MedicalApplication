@@ -120,7 +120,7 @@ namespace MedicalApplication.Views
             }
         }
 
-       
+
 
         private void OtherDataButton_Click(object sender, EventArgs e)
         {
@@ -163,17 +163,27 @@ namespace MedicalApplication.Views
         public Patient Patient { get => this.PatientBox.SelectedItem as Patient; set => this.PatientBox.SelectedItem = value; }
         public BindingList<Doctor> DoctorsList
         {
+            get
+            {
+                return this.DoctorBox.DataSource as BindingList<Doctor>;
+            }
             set
             {
-                this.DoctorBox.DataSource = value;
+
+                this.DoctorBox.DataSource = value as BindingList<Doctor>;
+              
             }
         }
 
         public BindingList<Patient> PatientsList
         {
+            get
+            {
+                return this.PatientBox.DataSource as BindingList<Patient>;
+            }
             set
             {
-                this.PatientBox.DataSource = value;
+                this.PatientBox.DataSource = value as BindingList<Patient>;
             }
         }
         public DateTime MeetingTime { get => this.RecordingDateBox.Value; set => this.RecordingDateBox.Value = value; }
@@ -182,6 +192,7 @@ namespace MedicalApplication.Views
 
         public new void Show()
         {
+
             base.ShowDialog();
         }
 
@@ -199,9 +210,20 @@ namespace MedicalApplication.Views
 
         public void Clear()
         {
+            DoctorBox.DataSource = null;
+            DoctorBox.Items.Clear();
+
+            PatientBox.DataSource = null;
+            PatientBox.Items.Clear();
+
             RecordingDateBox.Value = DateTime.Today;
             RecordingStatusBox.Clear();
             RecordingCauseBox.Clear();
+        }
+        public void RefreshTable()
+        {
+            DoctorBox.Refresh();
+            PatientBox.Refresh();
         }
         public void ShowErrorMessage(string errorMessage)
         {

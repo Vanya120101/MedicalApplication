@@ -13,8 +13,8 @@ namespace MedicalApplication.Views.Interfaces
     {
         Doctor Doctor { get; set; }
         Patient Patient { get; set; }
-        BindingList<Doctor> DoctorsList {  set; }
-        BindingList<Patient> PatientsList {  set; }
+        BindingList<Doctor> DoctorsList { get; set; }
+        BindingList<Patient> PatientsList { get; set; }
         DateTime MeetingTime { get; set; }
         string RecordingStatus { get; set; }
         string RecordingCause { get; set; }
@@ -23,6 +23,8 @@ namespace MedicalApplication.Views.Interfaces
         event Action ClickOnSaveRecordingChanged;
         event Action ClickOnChangeRecording;
         event Action ClickOnOtherDate;
+
+        void RefreshTable();
 
     }
 }

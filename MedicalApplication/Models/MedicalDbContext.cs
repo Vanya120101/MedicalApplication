@@ -1,6 +1,7 @@
 ﻿using MedicalApplication.Domain_Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -105,6 +106,7 @@ namespace MedicalApplication.Models
 
             this.Entry(doctor).State = EntityState.Modified;
             this.SaveChanges();
+            
             if (UpdateDoctors != null)
             {
                 UpdateDoctors.Invoke();
@@ -277,6 +279,12 @@ namespace MedicalApplication.Models
                 UpdateRecordings.Invoke();
             }
             return null;
+        }
+
+        public BindingList<Doctor> GetDoctors()
+        {
+            this.Doctors.Load();
+            return this.Doctors.Local.ToBindingList();
         }
     }
 }

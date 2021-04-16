@@ -3,6 +3,7 @@ using MedicalApplication.Models;
 using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -40,10 +41,26 @@ namespace MedicalApplication.Presenters
 
         private void MedicalDbContext_Update()
         {
-            MedicalDbContext.Patients.Load();
-            MedicalDbContext.Doctors.Load();
-            Form.PatientsList = MedicalDbContext.Patients.Local.ToBindingList();
-            Form.DoctorsList = MedicalDbContext.Doctors.Local.ToBindingList();
+            Form.Clear();
+            //MedicalDbContext.Patients.Load();
+            //MedicalDbContext.Doctors.Load();
+            //Form.PatientsList = MedicalDbContext.Patients.Local.ToBindingList();
+            //Form.DoctorsList = MedicalDbContext.GetDoctors();
+            Form.DoctorsList = new BindingList<Doctor>();
+
+            foreach (Doctor doctor in MedicalDbContext.Doctors)
+            {
+                Form.DoctorsList.Add(doctor);
+            }
+
+            Form.PatientsList = new BindingList<Patient>();
+
+            foreach (Patient patient in MedicalDbContext.Patients)
+            {
+                Form.PatientsList.Add(patient);
+            }
+            
+            Form.RefreshTable();
         }
 
         private void Form_ClickOnCreateRecording(Doctor doctor, Patient patient, DateTime meetingTime, string recordingCause, string recordingStatus)

@@ -56,7 +56,11 @@ namespace MedicalApplication.Views.Controls
         public event Action ClickOnShowInformation;
         public event Action ClickOnAdd;
         public event Action ClickOnRemove;
-        public BindingList<Doctor> Table { get => this.DoctorsList.DataSource as BindingList<Doctor>; set => this.DoctorsList.DataSource = value; }
+        public BindingList<Doctor> Table
+        { 
+            get => this.DoctorsList.DataSource as BindingList<Doctor>; 
+            set => this.DoctorsList.DataSource = value; 
+        }
         public Doctor CurrentObject
         {
             get
