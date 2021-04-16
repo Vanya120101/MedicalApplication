@@ -12,7 +12,12 @@ namespace MedicalApplication.Models
     static class Doctors
     {
         public static event Action UpdateDoctors;
-
+        private static MedicalDbContext medicalDbContext;
+        
+        static Doctors()
+        {
+            medicalDbContext = MyHelper.GetContext();
+        }
         public static string CheckAddDoctor(string doctorFirstName, string doctorSecondName, string doctorThirdName, DateTime doctorBirthdate, string doctorSpeciality, string doctorExperience)
         {
             string errorMessage = CheckDoctor(doctorFirstName, doctorSecondName, doctorThirdName, doctorBirthdate, doctorSpeciality, doctorExperience);
@@ -23,11 +28,10 @@ namespace MedicalApplication.Models
 
             Doctor doctor = new Doctor(doctorFirstName, doctorSecondName, doctorThirdName, doctorSpeciality, doctorBirthdate, doctorExperience);
 
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
+            
                 medicalDbContext.Doctors.Add(doctor);
                 medicalDbContext.SaveChanges();
-            }
+            
 
             if (UpdateDoctors != null)
             {
@@ -45,11 +49,14 @@ namespace MedicalApplication.Models
                 return errorMessage;
             }
 
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
+            if (doctor.Recordings.Count != 0)
             {
+                return "Доктор участвует в приёме, сначала удалите прием";
+            }
+
                 medicalDbContext.Entry(doctor).State = EntityState.Deleted;
                 medicalDbContext.SaveChanges();
-            }
+            
 
             if (UpdateDoctors != null)
             {
@@ -80,11 +87,10 @@ namespace MedicalApplication.Models
             doctor.Experience = doctorExperience;
 
 
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
+            
                 medicalDbContext.Entry(doctor).State = EntityState.Modified;
                 medicalDbContext.SaveChanges();
-            }
+            
 
             if (UpdateDoctors != null)
             {
@@ -136,11 +142,10 @@ namespace MedicalApplication.Models
         public static BindingList<Doctor> GetDoctors()
         {
             BindingList<Doctor> doctors;
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
+            
                 medicalDbContext.Doctors.Load();
                 doctors = medicalDbContext.Doctors.Local.ToBindingList();
-            }
+            
 
             return doctors;
         }

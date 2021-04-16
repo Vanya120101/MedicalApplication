@@ -1,5 +1,6 @@
 ﻿using MedicalApplication.Domain_Models;
 using MedicalApplication.Models;
+using MedicalApplication.Views;
 using MedicalApplication.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,9 @@ namespace MedicalApplication.Presenters
 
         private void Form_ClickOnShowInformation()
         {
-            PresenterService.Show(Presenters.RecordingForm, FormMode.IsShowing, Form.CurrentObject);
+            //PresenterService.Show(Presenters.RecordingForm, FormMode.IsShowing, Form.CurrentObject);
+            RecordingPresenter recordingPresenter = new RecordingPresenter(new RecordingForm());
+            recordingPresenter.Show(FormMode.IsShowing, Form.CurrentObject);
         }
 
         private void Form_ClickOnRemove(Recording recording, int currentIndex)
@@ -72,7 +75,9 @@ namespace MedicalApplication.Presenters
 
         private void Form_ClickOnAdd()
         {
-            PresenterService.Show(Presenters.RecordingForm, FormMode.IsCreating);
+            // PresenterService.Show(Presenters.RecordingForm, FormMode.IsCreating);
+            RecordingPresenter recordingPresenter = new RecordingPresenter(new RecordingForm());
+            recordingPresenter.Show(FormMode.IsCreating);
         }
 
         public void Update()

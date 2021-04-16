@@ -37,14 +37,11 @@ namespace MedicalApplication.Views.Controls
             this.AddDoctorButton = new System.Windows.Forms.Button();
             this.DoctorInformationButton = new System.Windows.Forms.Button();
             this.BottomPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secondNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thirdNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specialityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.experienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsList)).BeginInit();
             this.BottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
@@ -54,33 +51,33 @@ namespace MedicalApplication.Views.Controls
             // 
             this.DoctorsList.AllowUserToAddRows = false;
             this.DoctorsList.AllowUserToDeleteRows = false;
+            this.DoctorsList.AllowUserToResizeColumns = false;
             this.DoctorsList.AllowUserToResizeRows = false;
             this.DoctorsList.AutoGenerateColumns = false;
             this.DoctorsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.DoctorsList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.DoctorsList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DoctorsList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.DoctorsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DoctorsList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DoctorsList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DoctorsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DoctorsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DoctorsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.firstNameDataGridViewTextBoxColumn,
             this.secondNameDataGridViewTextBoxColumn,
             this.thirdNameDataGridViewTextBoxColumn,
-            this.specialityDataGridViewTextBoxColumn,
-            this.birthdateDataGridViewTextBoxColumn,
-            this.experienceDataGridViewTextBoxColumn});
+            this.specialityDataGridViewTextBoxColumn});
             this.DoctorsList.DataSource = this.doctorBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -88,13 +85,19 @@ namespace MedicalApplication.Views.Controls
             this.DoctorsList.DefaultCellStyle = dataGridViewCellStyle2;
             this.DoctorsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DoctorsList.EnableHeadersVisualStyles = false;
+            this.DoctorsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.DoctorsList.Location = new System.Drawing.Point(0, 0);
             this.DoctorsList.Margin = new System.Windows.Forms.Padding(0);
             this.DoctorsList.MultiSelect = false;
             this.DoctorsList.Name = "DoctorsList";
             this.DoctorsList.ReadOnly = true;
+            this.DoctorsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DoctorsList.RowHeadersVisible = false;
             this.DoctorsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DoctorsList.Size = new System.Drawing.Size(1300, 400);
+            this.DoctorsList.ShowCellErrors = false;
+            this.DoctorsList.ShowCellToolTips = false;
+            this.DoctorsList.ShowEditingIcon = false;
+            this.DoctorsList.Size = new System.Drawing.Size(2600, 769);
             this.DoctorsList.TabIndex = 0;
             // 
             // RemoveDoctorButton
@@ -109,11 +112,11 @@ namespace MedicalApplication.Views.Controls
             this.RemoveDoctorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.RemoveDoctorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveDoctorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RemoveDoctorButton.Location = new System.Drawing.Point(400, 0);
+            this.RemoveDoctorButton.Location = new System.Drawing.Point(800, 0);
             this.RemoveDoctorButton.Margin = new System.Windows.Forms.Padding(0);
             this.RemoveDoctorButton.Name = "RemoveDoctorButton";
-            this.RemoveDoctorButton.Padding = new System.Windows.Forms.Padding(30);
-            this.RemoveDoctorButton.Size = new System.Drawing.Size(256, 96);
+            this.RemoveDoctorButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.RemoveDoctorButton.Size = new System.Drawing.Size(512, 185);
             this.RemoveDoctorButton.TabIndex = 2;
             this.RemoveDoctorButton.Text = "Удалить";
             this.RemoveDoctorButton.UseVisualStyleBackColor = true;
@@ -131,11 +134,11 @@ namespace MedicalApplication.Views.Controls
             this.AddDoctorButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.AddDoctorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddDoctorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddDoctorButton.Location = new System.Drawing.Point(218, 0);
+            this.AddDoctorButton.Location = new System.Drawing.Point(436, 0);
             this.AddDoctorButton.Margin = new System.Windows.Forms.Padding(0);
             this.AddDoctorButton.Name = "AddDoctorButton";
-            this.AddDoctorButton.Padding = new System.Windows.Forms.Padding(30);
-            this.AddDoctorButton.Size = new System.Drawing.Size(182, 96);
+            this.AddDoctorButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.AddDoctorButton.Size = new System.Drawing.Size(364, 185);
             this.AddDoctorButton.TabIndex = 1;
             this.AddDoctorButton.Text = "Добавить";
             this.AddDoctorButton.UseVisualStyleBackColor = true;
@@ -156,8 +159,8 @@ namespace MedicalApplication.Views.Controls
             this.DoctorInformationButton.Location = new System.Drawing.Point(0, 0);
             this.DoctorInformationButton.Margin = new System.Windows.Forms.Padding(0);
             this.DoctorInformationButton.Name = "DoctorInformationButton";
-            this.DoctorInformationButton.Padding = new System.Windows.Forms.Padding(30);
-            this.DoctorInformationButton.Size = new System.Drawing.Size(218, 96);
+            this.DoctorInformationButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.DoctorInformationButton.Size = new System.Drawing.Size(436, 185);
             this.DoctorInformationButton.TabIndex = 0;
             this.DoctorInformationButton.Text = "Информация";
             this.DoctorInformationButton.UseVisualStyleBackColor = true;
@@ -169,80 +172,59 @@ namespace MedicalApplication.Views.Controls
             this.BottomPanel.Controls.Add(this.AddDoctorButton);
             this.BottomPanel.Controls.Add(this.RemoveDoctorButton);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomPanel.Location = new System.Drawing.Point(0, 300);
+            this.BottomPanel.Location = new System.Drawing.Point(0, 577);
+            this.BottomPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(1300, 100);
+            this.BottomPanel.Size = new System.Drawing.Size(2600, 192);
             this.BottomPanel.TabIndex = 0;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // secondNameDataGridViewTextBoxColumn
+            // 
+            this.secondNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.secondNameDataGridViewTextBoxColumn.DataPropertyName = "SecondName";
+            this.secondNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.secondNameDataGridViewTextBoxColumn.Name = "secondNameDataGridViewTextBoxColumn";
+            this.secondNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // thirdNameDataGridViewTextBoxColumn
+            // 
+            this.thirdNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.thirdNameDataGridViewTextBoxColumn.DataPropertyName = "ThirdName";
+            this.thirdNameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.thirdNameDataGridViewTextBoxColumn.Name = "thirdNameDataGridViewTextBoxColumn";
+            this.thirdNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // specialityDataGridViewTextBoxColumn
+            // 
+            this.specialityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.specialityDataGridViewTextBoxColumn.DataPropertyName = "Speciality";
+            this.specialityDataGridViewTextBoxColumn.HeaderText = "Специальность";
+            this.specialityDataGridViewTextBoxColumn.Name = "specialityDataGridViewTextBoxColumn";
+            this.specialityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // doctorBindingSource
             // 
             this.doctorBindingSource.DataSource = typeof(MedicalApplication.Domain_Models.Doctor);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 39;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstNameDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // secondNameDataGridViewTextBoxColumn
-            // 
-            this.secondNameDataGridViewTextBoxColumn.DataPropertyName = "SecondName";
-            this.secondNameDataGridViewTextBoxColumn.HeaderText = "SecondName";
-            this.secondNameDataGridViewTextBoxColumn.Name = "secondNameDataGridViewTextBoxColumn";
-            this.secondNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.secondNameDataGridViewTextBoxColumn.Width = 95;
-            // 
-            // thirdNameDataGridViewTextBoxColumn
-            // 
-            this.thirdNameDataGridViewTextBoxColumn.DataPropertyName = "ThirdName";
-            this.thirdNameDataGridViewTextBoxColumn.HeaderText = "ThirdName";
-            this.thirdNameDataGridViewTextBoxColumn.Name = "thirdNameDataGridViewTextBoxColumn";
-            this.thirdNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thirdNameDataGridViewTextBoxColumn.Width = 82;
-            // 
-            // specialityDataGridViewTextBoxColumn
-            // 
-            this.specialityDataGridViewTextBoxColumn.DataPropertyName = "Speciality";
-            this.specialityDataGridViewTextBoxColumn.HeaderText = "Speciality";
-            this.specialityDataGridViewTextBoxColumn.Name = "specialityDataGridViewTextBoxColumn";
-            this.specialityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.specialityDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // birthdateDataGridViewTextBoxColumn
-            // 
-            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "Birthdate";
-            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
-            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
-            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.birthdateDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // experienceDataGridViewTextBoxColumn
-            // 
-            this.experienceDataGridViewTextBoxColumn.DataPropertyName = "Experience";
-            this.experienceDataGridViewTextBoxColumn.HeaderText = "Experience";
-            this.experienceDataGridViewTextBoxColumn.Name = "experienceDataGridViewTextBoxColumn";
-            this.experienceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.experienceDataGridViewTextBoxColumn.Width = 83;
-            // 
             // DoctorsListControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.Controls.Add(this.BottomPanel);
             this.Controls.Add(this.DoctorsList);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "DoctorsListControl";
-            this.Size = new System.Drawing.Size(1300, 400);
+            this.Size = new System.Drawing.Size(2600, 769);
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsList)).EndInit();
             this.BottomPanel.ResumeLayout(false);
             this.BottomPanel.PerformLayout();
@@ -258,13 +240,10 @@ namespace MedicalApplication.Views.Controls
         private System.Windows.Forms.Button AddDoctorButton;
         private System.Windows.Forms.Button DoctorInformationButton;
         private System.Windows.Forms.FlowLayoutPanel BottomPanel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource doctorBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn secondNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thirdNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specialityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn experienceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource doctorBindingSource;
     }
 }

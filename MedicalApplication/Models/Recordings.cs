@@ -12,7 +12,12 @@ namespace MedicalApplication.Models
     static class Recordings
     {
         public static event Action UpdateRecordings;
+        private static MedicalDbContext medicalDbContext;
 
+        static Recordings()
+        {
+            medicalDbContext = MyHelper.GetContext();
+        }
         public static string ChecAddRecording(Doctor doctor, Patient patient, DateTime meetingTime, string recordingStatus, string recordingCause)
         {
             string errorMessage = CheckRecording(doctor, patient, meetingTime, recordingStatus, recordingCause);
@@ -22,13 +27,11 @@ namespace MedicalApplication.Models
             }
 
             Recording recording = new Recording(doctor, patient, meetingTime, recordingStatus, recordingCause);
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
-                medicalDbContext.Doctors.Attach(doctor);
-                medicalDbContext.Patients.Attach(patient);
-                medicalDbContext.Recordings.Add(recording);
-                medicalDbContext.SaveChanges();
-            }
+            medicalDbContext.Doctors.Attach(doctor);
+            medicalDbContext.Patients.Attach(patient);
+            medicalDbContext.Recordings.Add(recording);
+            medicalDbContext.SaveChanges();
+
 
             if (UpdateRecordings != null)
             {
@@ -45,14 +48,13 @@ namespace MedicalApplication.Models
                 return errorMessage;
             }
 
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
 
-                medicalDbContext.Doctors.Attach(recording.Doctor);
-                medicalDbContext.Patients.Attach(recording.Patient);
-                medicalDbContext.Entry(recording).State = EntityState.Deleted;
-                medicalDbContext.SaveChanges();
-            }
+
+            medicalDbContext.Doctors.Attach(recording.Doctor);
+            medicalDbContext.Patients.Attach(recording.Patient);
+            medicalDbContext.Entry(recording).State = EntityState.Deleted;
+            medicalDbContext.SaveChanges();
+
 
             if (UpdateRecordings != null)
             {
@@ -81,16 +83,15 @@ namespace MedicalApplication.Models
             recording.Status = recordingStatus;
             recording.Cause = recordingCause;
 
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
 
-                medicalDbContext.Doctors.Attach(doctor);
-                medicalDbContext.Patients.Attach(patient);
-                medicalDbContext.Entry(recording).State = EntityState.Modified;
-                medicalDbContext.SaveChanges();
-            }
 
-           
+            medicalDbContext.Doctors.Attach(doctor);
+            medicalDbContext.Patients.Attach(patient);
+            medicalDbContext.Entry(recording).State = EntityState.Modified;
+            medicalDbContext.SaveChanges();
+
+
+
             if (UpdateRecordings != null)
             {
                 UpdateRecordings.Invoke();
@@ -144,7 +145,6 @@ namespace MedicalApplication.Models
             //    medicalDbContext.Recordings.Load();
             //    recordings = medicalDbContext.Recordings.Local.ToBindingList();
             //}
-            MedicalDbContext medicalDbContext = new MedicalDbContext();
             medicalDbContext.Doctors.Load();
             medicalDbContext.Patients.Load();
             medicalDbContext.Recordings.Load();
@@ -154,22 +154,21 @@ namespace MedicalApplication.Models
 
         public static Recording GetRecording(int id)
         {
-            Recording recording = null; 
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
-                medicalDbContext.Doctors.Load();
-                medicalDbContext.Patients.Load();
-                medicalDbContext.Recordings.Load();
-                BindingList<Recording> recordings = medicalDbContext.Recordings.Local.ToBindingList();
+            Recording recording = null;
 
-                foreach (Recording ForeachRecording in recordings)
+            medicalDbContext.Doctors.Load();
+            medicalDbContext.Patients.Load();
+            medicalDbContext.Recordings.Load();
+            BindingList<Recording> recordings = medicalDbContext.Recordings.Local.ToBindingList();
+
+            foreach (Recording ForeachRecording in recordings)
+            {
+                if (ForeachRecording.Id == id)
                 {
-                    if (ForeachRecording.Id == id)
-                    {
-                        recording = ForeachRecording;
-                    }
+                    recording = ForeachRecording;
                 }
             }
+
 
             return recording;
 

@@ -79,7 +79,8 @@ namespace MedicalApplication.Presenters
                 Form.ShowErrorMessage(errorMessage);
                 return;
             }
-            PresenterService.Close(Presenters.RecordingForm);
+            //PresenterService.Close(Presenters.RecordingForm);
+            Form.Close();
         }
 
         public override void Show<T>(FormMode formMode, T currentObject)
@@ -128,6 +129,7 @@ namespace MedicalApplication.Presenters
                 return;
             }
             PresenterService.Close(Presenters.RecordingForm);
+            Form.Close();
         }
 
         private void Form_ClickOnOtherDate()

@@ -61,6 +61,7 @@
     <Compile Include="Domain Models\Recording.cs" />
     <Compile Include="Models\Doctors.cs" />
     <Compile Include="Models\MedicalDbContext.cs" />
+    <Compile Include="Models\MyHelper.cs" />
     <Compile Include="Models\Patients.cs" />
     <Compile Include="Models\Recordings.cs" />
     <Compile Include="Presenters\DoctorPresenter.cs" />

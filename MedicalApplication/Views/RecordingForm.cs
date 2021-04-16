@@ -204,8 +204,10 @@ namespace MedicalApplication.Views
 
         public new void Close()
         {
-            this.Clear();
-            this.Visible = false;
+            //  this.Clear();
+            //  this.Visible = false;
+
+            base.Close();
         }
 
         public void Clear()

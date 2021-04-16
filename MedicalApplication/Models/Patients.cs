@@ -12,7 +12,12 @@ namespace MedicalApplication.Models
     static class Patients
     {
         public static event Action UpdatePatients;
+        private static MedicalDbContext medicalDbContext;
 
+        static Patients()
+        {
+            medicalDbContext = MyHelper.GetContext();
+        }
         public static string CheckAddPatient(string firstPatientName, string secondPatientName, string thirdPatientName, string patientSpeciality, DateTime patientBirthdate)
         {
             string errorMessage = CheckPatient(firstPatientName, secondPatientName, thirdPatientName, patientSpeciality, patientBirthdate);
@@ -23,11 +28,10 @@ namespace MedicalApplication.Models
 
             Patient patient = new Patient(firstPatientName, secondPatientName, thirdPatientName, patientSpeciality, patientBirthdate);
 
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
+            
                 medicalDbContext.Patients.Add(patient);
                 medicalDbContext.SaveChanges();
-            }
+            
 
             if (UpdatePatients != null)
             {
@@ -43,12 +47,14 @@ namespace MedicalApplication.Models
             {
                 return errorMessage;
             }
-
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
+            if (patient.Recordings.Count != 0)
             {
-                medicalDbContext.Entry(patient).State = EntityState.Deleted;
-                medicalDbContext.SaveChanges();
+                return "Пациент участвует в приёме, сначала удалите прием";
             }
+
+            medicalDbContext.Entry(patient).State = EntityState.Deleted;
+                medicalDbContext.SaveChanges();
+            
 
             if (UpdatePatients != null)
             {
@@ -79,11 +85,10 @@ namespace MedicalApplication.Models
 
 
 
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
+            
                 medicalDbContext.Entry(patient).State = EntityState.Modified;
                 medicalDbContext.SaveChanges();
-            }
+            
 
             if (UpdatePatients != null)
             {
@@ -131,11 +136,10 @@ namespace MedicalApplication.Models
         public static BindingList<Patient> GetPatients()
         {
             BindingList<Patient> patients;
-            using (MedicalDbContext medicalDbContext = new MedicalDbContext())
-            {
+            
                 medicalDbContext.Patients.Load();
                 patients = medicalDbContext.Patients.Local.ToBindingList();
-            }
+            
 
             return patients;
         }
