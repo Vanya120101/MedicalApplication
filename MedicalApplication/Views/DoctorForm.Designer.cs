@@ -93,7 +93,7 @@ namespace MedicalApplication.Views
             this.MyCancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.MyCancelButton.Name = "MyCancelButton";
             this.MyCancelButton.Size = new System.Drawing.Size(75, 100);
-            this.MyCancelButton.TabIndex = 4;
+            this.MyCancelButton.TabIndex = 15;
             this.MyCancelButton.UseVisualStyleBackColor = true;
             this.MyCancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
@@ -206,7 +206,7 @@ namespace MedicalApplication.Views
             this.DoctorSpecialtyBox.Location = new System.Drawing.Point(268, 294);
             this.DoctorSpecialtyBox.Name = "DoctorSpecialtyBox";
             this.DoctorSpecialtyBox.Size = new System.Drawing.Size(441, 32);
-            this.DoctorSpecialtyBox.TabIndex = 4;
+            this.DoctorSpecialtyBox.TabIndex = 5;
             // 
             // DoctorExperienceBox
             // 
@@ -257,7 +257,7 @@ namespace MedicalApplication.Views
             this.DoctorBirthdateBox.Location = new System.Drawing.Point(268, 261);
             this.DoctorBirthdateBox.Name = "DoctorBirthdateBox";
             this.DoctorBirthdateBox.Size = new System.Drawing.Size(441, 32);
-            this.DoctorBirthdateBox.TabIndex = 10;
+            this.DoctorBirthdateBox.TabIndex = 4;
             // 
             // OtherDataButton
             // 
