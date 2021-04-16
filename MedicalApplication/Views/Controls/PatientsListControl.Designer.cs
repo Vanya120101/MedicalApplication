@@ -32,7 +32,6 @@ namespace MedicalApplication.Views.Controls
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PatientsList = new System.Windows.Forms.DataGridView();
             this.PatientInformationButton = new System.Windows.Forms.Button();
             this.AddPatientButton = new System.Windows.Forms.Button();
@@ -61,12 +60,12 @@ namespace MedicalApplication.Views.Controls
             this.PatientsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PatientsList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.PatientsList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.PatientsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.PatientsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -76,12 +75,12 @@ namespace MedicalApplication.Views.Controls
             this.thirdNameDataGridViewTextBoxColumn,
             this.birthdateDataGridViewTextBoxColumn});
             this.PatientsList.DataSource = this.patientBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.PatientsList.DefaultCellStyle = dataGridViewCellStyle2;
             this.PatientsList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -93,21 +92,13 @@ namespace MedicalApplication.Views.Controls
             this.PatientsList.Name = "PatientsList";
             this.PatientsList.ReadOnly = true;
             this.PatientsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PatientsList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.PatientsList.RowHeadersVisible = false;
             this.PatientsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.PatientsList.ShowCellErrors = false;
             this.PatientsList.ShowCellToolTips = false;
             this.PatientsList.ShowEditingIcon = false;
-            this.PatientsList.ShowRowErrors = false;
-            this.PatientsList.Size = new System.Drawing.Size(1300, 400);
-            this.PatientsList.TabIndex = 4;
+            this.PatientsList.Size = new System.Drawing.Size(2000, 1808);
+            this.PatientsList.TabIndex = 1;
             // 
             // PatientInformationButton
             // 
@@ -124,8 +115,8 @@ namespace MedicalApplication.Views.Controls
             this.PatientInformationButton.Location = new System.Drawing.Point(0, 0);
             this.PatientInformationButton.Margin = new System.Windows.Forms.Padding(0);
             this.PatientInformationButton.Name = "PatientInformationButton";
-            this.PatientInformationButton.Padding = new System.Windows.Forms.Padding(30);
-            this.PatientInformationButton.Size = new System.Drawing.Size(218, 96);
+            this.PatientInformationButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.PatientInformationButton.Size = new System.Drawing.Size(436, 185);
             this.PatientInformationButton.TabIndex = 0;
             this.PatientInformationButton.Text = "Информация";
             this.PatientInformationButton.UseVisualStyleBackColor = true;
@@ -143,11 +134,11 @@ namespace MedicalApplication.Views.Controls
             this.AddPatientButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.AddPatientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddPatientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddPatientButton.Location = new System.Drawing.Point(218, 0);
+            this.AddPatientButton.Location = new System.Drawing.Point(436, 0);
             this.AddPatientButton.Margin = new System.Windows.Forms.Padding(0);
             this.AddPatientButton.Name = "AddPatientButton";
-            this.AddPatientButton.Padding = new System.Windows.Forms.Padding(30);
-            this.AddPatientButton.Size = new System.Drawing.Size(182, 96);
+            this.AddPatientButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.AddPatientButton.Size = new System.Drawing.Size(364, 185);
             this.AddPatientButton.TabIndex = 1;
             this.AddPatientButton.Text = "Добавить";
             this.AddPatientButton.UseVisualStyleBackColor = true;
@@ -165,11 +156,11 @@ namespace MedicalApplication.Views.Controls
             this.RemovePatientButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.RemovePatientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemovePatientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RemovePatientButton.Location = new System.Drawing.Point(400, 0);
+            this.RemovePatientButton.Location = new System.Drawing.Point(800, 0);
             this.RemovePatientButton.Margin = new System.Windows.Forms.Padding(0);
             this.RemovePatientButton.Name = "RemovePatientButton";
-            this.RemovePatientButton.Padding = new System.Windows.Forms.Padding(30);
-            this.RemovePatientButton.Size = new System.Drawing.Size(256, 96);
+            this.RemovePatientButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.RemovePatientButton.Size = new System.Drawing.Size(512, 185);
             this.RemovePatientButton.TabIndex = 2;
             this.RemovePatientButton.Text = "Удалить";
             this.RemovePatientButton.UseVisualStyleBackColor = true;
@@ -181,16 +172,17 @@ namespace MedicalApplication.Views.Controls
             this.BottomPanel.Controls.Add(this.AddPatientButton);
             this.BottomPanel.Controls.Add(this.RemovePatientButton);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomPanel.Location = new System.Drawing.Point(0, 300);
+            this.BottomPanel.Location = new System.Drawing.Point(0, 1808);
+            this.BottomPanel.Margin = new System.Windows.Forms.Padding(6);
             this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(1300, 100);
-            this.BottomPanel.TabIndex = 0;
+            this.BottomPanel.Size = new System.Drawing.Size(2000, 192);
+            this.BottomPanel.TabIndex = 2;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
             this.firstNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = " Имя";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
             this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -226,10 +218,10 @@ namespace MedicalApplication.Views.Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BottomPanel);
             this.Controls.Add(this.PatientsList);
+            this.Controls.Add(this.BottomPanel);
             this.Name = "PatientsListControl";
-            this.Size = new System.Drawing.Size(1300, 400);
+            this.Size = new System.Drawing.Size(2000, 2000);
             ((System.ComponentModel.ISupportInitialize)(this.PatientsList)).EndInit();
             this.BottomPanel.ResumeLayout(false);
             this.BottomPanel.PerformLayout();
@@ -241,14 +233,14 @@ namespace MedicalApplication.Views.Controls
         #endregion
 
         private System.Windows.Forms.DataGridView PatientsList;
-        private System.Windows.Forms.Button PatientInformationButton;
-        private System.Windows.Forms.Button AddPatientButton;
-        private System.Windows.Forms.Button RemovePatientButton;
-        private System.Windows.Forms.FlowLayoutPanel BottomPanel;
-        private System.Windows.Forms.BindingSource patientBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn secondNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thirdNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource patientBindingSource;
+        private System.Windows.Forms.Button PatientInformationButton;
+        private System.Windows.Forms.Button AddPatientButton;
+        private System.Windows.Forms.Button RemovePatientButton;
+        private System.Windows.Forms.FlowLayoutPanel BottomPanel;
     }
 }

@@ -13,6 +13,7 @@ namespace MedicalApplication.Views
         public MedicalForm()
         {
             InitializeComponent();
+            DoctorsButton_Click(null, null);
         }
         #endregion
 
@@ -152,8 +153,12 @@ namespace MedicalApplication.Views
             this.ContentPanel.Controls.Add(userControl);
         }
 
+
         #endregion
 
-       
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

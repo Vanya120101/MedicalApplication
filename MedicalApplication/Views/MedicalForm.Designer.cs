@@ -252,6 +252,7 @@ namespace MedicalApplication.Views
             this.MinimizeButton.Size = new System.Drawing.Size(75, 81);
             this.MinimizeButton.TabIndex = 4;
             this.MinimizeButton.UseVisualStyleBackColor = true;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // MyCancelButton
             // 

@@ -30,18 +30,19 @@ namespace MedicalApplication.Views.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.RecordingsList = new System.Windows.Forms.DataGridView();
             this.RecordingInformationButton = new System.Windows.Forms.Button();
             this.AddRecordingButton = new System.Windows.Forms.Button();
-            this.RemoveRecordButton = new System.Windows.Forms.Button();
+            this.RemoveRecordingButton = new System.Windows.Forms.Button();
             this.BottomPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.recordingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doctorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.meetingTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.causeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recordingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.RecordingsList)).BeginInit();
             this.BottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.recordingBindingSource)).BeginInit();
@@ -49,25 +50,57 @@ namespace MedicalApplication.Views.Controls
             // 
             // RecordingsList
             // 
+            this.RecordingsList.AllowUserToAddRows = false;
+            this.RecordingsList.AllowUserToDeleteRows = false;
+            this.RecordingsList.AllowUserToResizeColumns = false;
+            this.RecordingsList.AllowUserToResizeRows = false;
             this.RecordingsList.AutoGenerateColumns = false;
+            this.RecordingsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.RecordingsList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.RecordingsList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.RecordingsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RecordingsList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.RecordingsList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecordingsList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.RecordingsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RecordingsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.doctorDataGridViewTextBoxColumn,
             this.patientDataGridViewTextBoxColumn,
             this.meetingTimeDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
             this.causeDataGridViewTextBoxColumn});
             this.RecordingsList.DataSource = this.recordingBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.RecordingsList.DefaultCellStyle = dataGridViewCellStyle2;
             this.RecordingsList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RecordingsList.EnableHeadersVisualStyles = false;
+            this.RecordingsList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.RecordingsList.Location = new System.Drawing.Point(0, 0);
             this.RecordingsList.Margin = new System.Windows.Forms.Padding(0);
             this.RecordingsList.MultiSelect = false;
             this.RecordingsList.Name = "RecordingsList";
+            this.RecordingsList.ReadOnly = true;
+            this.RecordingsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.RecordingsList.RowHeadersVisible = false;
             this.RecordingsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.RecordingsList.Size = new System.Drawing.Size(1300, 300);
-            this.RecordingsList.TabIndex = 6;
+            this.RecordingsList.ShowCellErrors = false;
+            this.RecordingsList.ShowCellToolTips = false;
+            this.RecordingsList.ShowEditingIcon = false;
+            this.RecordingsList.Size = new System.Drawing.Size(2000, 1808);
+            this.RecordingsList.TabIndex = 3;
             // 
             // RecordingInformationButton
             // 
@@ -84,8 +117,8 @@ namespace MedicalApplication.Views.Controls
             this.RecordingInformationButton.Location = new System.Drawing.Point(0, 0);
             this.RecordingInformationButton.Margin = new System.Windows.Forms.Padding(0);
             this.RecordingInformationButton.Name = "RecordingInformationButton";
-            this.RecordingInformationButton.Padding = new System.Windows.Forms.Padding(30);
-            this.RecordingInformationButton.Size = new System.Drawing.Size(218, 96);
+            this.RecordingInformationButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.RecordingInformationButton.Size = new System.Drawing.Size(436, 185);
             this.RecordingInformationButton.TabIndex = 0;
             this.RecordingInformationButton.Text = "Информация";
             this.RecordingInformationButton.UseVisualStyleBackColor = true;
@@ -103,88 +136,93 @@ namespace MedicalApplication.Views.Controls
             this.AddRecordingButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.AddRecordingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddRecordingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddRecordingButton.Location = new System.Drawing.Point(218, 0);
+            this.AddRecordingButton.Location = new System.Drawing.Point(436, 0);
             this.AddRecordingButton.Margin = new System.Windows.Forms.Padding(0);
             this.AddRecordingButton.Name = "AddRecordingButton";
-            this.AddRecordingButton.Padding = new System.Windows.Forms.Padding(30);
-            this.AddRecordingButton.Size = new System.Drawing.Size(182, 96);
+            this.AddRecordingButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.AddRecordingButton.Size = new System.Drawing.Size(364, 185);
             this.AddRecordingButton.TabIndex = 1;
             this.AddRecordingButton.Text = "Добавить";
             this.AddRecordingButton.UseVisualStyleBackColor = true;
             this.AddRecordingButton.Click += new System.EventHandler(this.AddRecordingButton_Click);
             // 
-            // RemoveRecordButton
+            // RemoveRecordingButton
             // 
-            this.RemoveRecordButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RemoveRecordingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveRecordButton.AutoSize = true;
-            this.RemoveRecordButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RemoveRecordButton.FlatAppearance.BorderSize = 0;
-            this.RemoveRecordButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.RemoveRecordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.RemoveRecordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveRecordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RemoveRecordButton.Location = new System.Drawing.Point(400, 0);
-            this.RemoveRecordButton.Margin = new System.Windows.Forms.Padding(0);
-            this.RemoveRecordButton.Name = "RemoveRecordButton";
-            this.RemoveRecordButton.Padding = new System.Windows.Forms.Padding(30);
-            this.RemoveRecordButton.Size = new System.Drawing.Size(256, 96);
-            this.RemoveRecordButton.TabIndex = 2;
-            this.RemoveRecordButton.Text = "Удалить";
-            this.RemoveRecordButton.UseVisualStyleBackColor = true;
-            this.RemoveRecordButton.Click += new System.EventHandler(this.RemoveRecordButton_Click);
+            this.RemoveRecordingButton.AutoSize = true;
+            this.RemoveRecordingButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RemoveRecordingButton.FlatAppearance.BorderSize = 0;
+            this.RemoveRecordingButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.RemoveRecordingButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.RemoveRecordingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveRecordingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RemoveRecordingButton.Location = new System.Drawing.Point(800, 0);
+            this.RemoveRecordingButton.Margin = new System.Windows.Forms.Padding(0);
+            this.RemoveRecordingButton.Name = "RemoveRecordingButton";
+            this.RemoveRecordingButton.Padding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.RemoveRecordingButton.Size = new System.Drawing.Size(512, 185);
+            this.RemoveRecordingButton.TabIndex = 2;
+            this.RemoveRecordingButton.Text = "Удалить";
+            this.RemoveRecordingButton.UseVisualStyleBackColor = true;
+            this.RemoveRecordingButton.Click += new System.EventHandler(this.RemoveRecordButton_Click);
             // 
             // BottomPanel
             // 
             this.BottomPanel.Controls.Add(this.RecordingInformationButton);
             this.BottomPanel.Controls.Add(this.AddRecordingButton);
-            this.BottomPanel.Controls.Add(this.RemoveRecordButton);
+            this.BottomPanel.Controls.Add(this.RemoveRecordingButton);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomPanel.Location = new System.Drawing.Point(0, 300);
+            this.BottomPanel.Location = new System.Drawing.Point(0, 1808);
+            this.BottomPanel.Margin = new System.Windows.Forms.Padding(6);
             this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(1300, 100);
-            this.BottomPanel.TabIndex = 5;
+            this.BottomPanel.Size = new System.Drawing.Size(2000, 192);
+            this.BottomPanel.TabIndex = 4;
+            // 
+            // doctorDataGridViewTextBoxColumn
+            // 
+            this.doctorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.doctorDataGridViewTextBoxColumn.DataPropertyName = "Doctor";
+            this.doctorDataGridViewTextBoxColumn.HeaderText = "Доктор";
+            this.doctorDataGridViewTextBoxColumn.Name = "doctorDataGridViewTextBoxColumn";
+            this.doctorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // patientDataGridViewTextBoxColumn
+            // 
+            this.patientDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.patientDataGridViewTextBoxColumn.DataPropertyName = "Patient";
+            this.patientDataGridViewTextBoxColumn.HeaderText = "Пациент";
+            this.patientDataGridViewTextBoxColumn.Name = "patientDataGridViewTextBoxColumn";
+            this.patientDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // meetingTimeDataGridViewTextBoxColumn
+            // 
+            this.meetingTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.meetingTimeDataGridViewTextBoxColumn.DataPropertyName = "MeetingTime";
+            this.meetingTimeDataGridViewTextBoxColumn.HeaderText = "Дата и время";
+            this.meetingTimeDataGridViewTextBoxColumn.Name = "meetingTimeDataGridViewTextBoxColumn";
+            this.meetingTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Статус";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // causeDataGridViewTextBoxColumn
+            // 
+            this.causeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.causeDataGridViewTextBoxColumn.DataPropertyName = "Cause";
+            this.causeDataGridViewTextBoxColumn.HeaderText = "Причина";
+            this.causeDataGridViewTextBoxColumn.Name = "causeDataGridViewTextBoxColumn";
+            this.causeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // recordingBindingSource
             // 
             this.recordingBindingSource.DataSource = typeof(MedicalApplication.Domain_Models.Recording);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // doctorDataGridViewTextBoxColumn
-            // 
-            this.doctorDataGridViewTextBoxColumn.DataPropertyName = "Doctor";
-            this.doctorDataGridViewTextBoxColumn.HeaderText = "Doctor";
-            this.doctorDataGridViewTextBoxColumn.Name = "doctorDataGridViewTextBoxColumn";
-            // 
-            // patientDataGridViewTextBoxColumn
-            // 
-            this.patientDataGridViewTextBoxColumn.DataPropertyName = "Patient";
-            this.patientDataGridViewTextBoxColumn.HeaderText = "Patient";
-            this.patientDataGridViewTextBoxColumn.Name = "patientDataGridViewTextBoxColumn";
-            // 
-            // meetingTimeDataGridViewTextBoxColumn
-            // 
-            this.meetingTimeDataGridViewTextBoxColumn.DataPropertyName = "MeetingTime";
-            this.meetingTimeDataGridViewTextBoxColumn.HeaderText = "MeetingTime";
-            this.meetingTimeDataGridViewTextBoxColumn.Name = "meetingTimeDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // causeDataGridViewTextBoxColumn
-            // 
-            this.causeDataGridViewTextBoxColumn.DataPropertyName = "Cause";
-            this.causeDataGridViewTextBoxColumn.HeaderText = "Cause";
-            this.causeDataGridViewTextBoxColumn.Name = "causeDataGridViewTextBoxColumn";
             // 
             // RecordingsListControl
             // 
@@ -193,7 +231,7 @@ namespace MedicalApplication.Views.Controls
             this.Controls.Add(this.RecordingsList);
             this.Controls.Add(this.BottomPanel);
             this.Name = "RecordingsListControl";
-            this.Size = new System.Drawing.Size(1300, 400);
+            this.Size = new System.Drawing.Size(2000, 2000);
             ((System.ComponentModel.ISupportInitialize)(this.RecordingsList)).EndInit();
             this.BottomPanel.ResumeLayout(false);
             this.BottomPanel.PerformLayout();
@@ -205,16 +243,15 @@ namespace MedicalApplication.Views.Controls
         #endregion
 
         private System.Windows.Forms.DataGridView RecordingsList;
-        private System.Windows.Forms.Button RecordingInformationButton;
-        private System.Windows.Forms.Button AddRecordingButton;
-        private System.Windows.Forms.Button RemoveRecordButton;
-        private System.Windows.Forms.FlowLayoutPanel BottomPanel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn doctorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn patientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn meetingTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn causeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource recordingBindingSource;
+        private System.Windows.Forms.Button RecordingInformationButton;
+        private System.Windows.Forms.Button AddRecordingButton;
+        private System.Windows.Forms.Button RemoveRecordingButton;
+        private System.Windows.Forms.FlowLayoutPanel BottomPanel;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MedicalApplication.Presenters;
 using MedicalApplication.Views.Interfaces;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MedicalApplication.Views
@@ -10,6 +11,12 @@ namespace MedicalApplication.Views
         public QuestionForm()
         {
             InitializeComponent();
+            this.InformationLabel.Text = "Данное приложение - симуляция обертки для медицинской базы данных.";
+            this.InformationLabel.Text += "\n\nНа вкладке доктора можно добавлять и удалять докторов, просматривать информацию и изменять их";
+            this.InformationLabel.Text += "\n\nНа вкладке пациентов можно добавлять и удалять пациентов, просматривать информацию и изменять их";
+            this.InformationLabel.Text += "\n\nНа вкладке записей можно добавлять и удалять записи, просматривать информацию и изменять их";
+
+
         }
 
         public void Clear()
@@ -18,7 +25,7 @@ namespace MedicalApplication.Views
 
         public new void Show()
         {
-            base.ShowDialog();
+            base.Show();
         }
 
         public void Show(FormMode mode)
@@ -45,5 +52,25 @@ namespace MedicalApplication.Views
         {
             MessageBox.Show(errorMessage);
         }
+
+        private Point moveStart;
+        private void TopMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point deltaPos = new Point(e.X - moveStart.X, e.Y - moveStart.Y);
+                this.Location = new Point(this.Location.X + deltaPos.X, this.Location.Y + deltaPos.Y);
+            }
+        }
+
+        private void TopMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                moveStart = new Point(e.X, e.Y);
+
+            }
+        }
+
     }
 }

@@ -32,6 +32,8 @@ namespace MedicalApplication.Views.Controls
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DoctorsList = new System.Windows.Forms.DataGridView();
             this.RemoveDoctorButton = new System.Windows.Forms.Button();
             this.AddDoctorButton = new System.Windows.Forms.Button();
@@ -92,7 +94,17 @@ namespace MedicalApplication.Views.Controls
             this.DoctorsList.Name = "DoctorsList";
             this.DoctorsList.ReadOnly = true;
             this.DoctorsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoctorsList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DoctorsList.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DoctorsList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DoctorsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DoctorsList.ShowCellErrors = false;
             this.DoctorsList.ShowCellToolTips = false;
@@ -173,7 +185,7 @@ namespace MedicalApplication.Views.Controls
             this.BottomPanel.Controls.Add(this.RemoveDoctorButton);
             this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BottomPanel.Location = new System.Drawing.Point(0, 577);
-            this.BottomPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BottomPanel.Margin = new System.Windows.Forms.Padding(6);
             this.BottomPanel.Name = "BottomPanel";
             this.BottomPanel.Size = new System.Drawing.Size(2600, 192);
             this.BottomPanel.TabIndex = 0;
@@ -222,7 +234,7 @@ namespace MedicalApplication.Views.Controls
             this.Controls.Add(this.BottomPanel);
             this.Controls.Add(this.DoctorsList);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "DoctorsListControl";
             this.Size = new System.Drawing.Size(2600, 769);
             ((System.ComponentModel.ISupportInitialize)(this.DoctorsList)).EndInit();
